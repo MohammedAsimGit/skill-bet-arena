@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Transactions - SkillBet Arena Admin</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Navigation -->
+    <nav class="admin-nav">
+        <div class="admin-nav-container">
+            <div class="admin-nav-logo">
+                <h2>SkillBet <span>Arena</span> Admin</h2>
+            </div>
+            <ul class="admin-nav-menu">
+                <li class="admin-nav-item">
+                    <a href="dashboard.html" class="admin-nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="contests.html" class="admin-nav-link">
+                        <i class="fas fa-trophy"></i>
+                        <span>Contests</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="users.html" class="admin-nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="transactions.html" class="admin-nav-link active">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="withdrawals.html" class="admin-nav-link">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Withdrawals</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="settings.html" class="admin-nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="admin-nav-footer">
+                <button id="logoutBtn" class="btn btn-outline btn-small">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="admin-header">
+            <h1>Manage Transactions</h1>
+            <div class="admin-header-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search transactions...">
+                </div>
+                <div class="admin-user">
+                    <img src="../../assets/images/default-avatar.png" alt="Admin" class="admin-avatar">
+                    <span>Admin User</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transactions Table -->
+        <section class="admin-content">
+            <div class="container">
+                <div class="admin-section-header">
+                    <h2>All Transactions</h2>
+                    <div class="filter-options">
+                        <select id="typeFilter">
+                            <option value="all">All Types</option>
+                            <option value="deposit">Deposit</option>
+                            <option value="withdrawal">Withdrawal</option>
+                            <option value="contest_entry">Contest Entry</option>
+                            <option value="contest_win">Contest Win</option>
+                        </select>
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                            <option value="failed">Failed</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>User</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Payment Method</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TXN-ABC123</td>
+                                <td>John Doe</td>
+                                <td><span class="badge badge-success">Deposit</span></td>
+                                <td class="amount-positive">+₹500.00</td>
+                                <td><span class="status-badge completed">Completed</span></td>
+                                <td>Razorpay</td>
+                                <td>2023-06-19 14:30</td>
+                                <td>
+                                    <button class="btn btn-outline btn-small">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TXN-DEF456</td>
+                                <td>Jane Smith</td>
+                                <td><span class="badge badge-danger">Contest Entry</span></td>
+                                <td class="amount-negative">-₹50.00</td>
+                                <td><span class="status-badge completed">Completed</span></td>
+                                <td>Wallet</td>
+                                <td>2023-06-19 15:45</td>
+                                <td>
+                                    <button class="btn btn-outline btn-small">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TXN-GHI789</td>
+                                <td>John Doe</td>
+                                <td><span class="badge badge-success">Contest Win</span></td>
+                                <td class="amount-positive">+₹450.00</td>
+                                <td><span class="status-badge completed">Completed</span></td>
+                                <td>Wallet</td>
+                                <td>2023-06-19 16:30</td>
+                                <td>
+                                    <button class="btn btn-outline btn-small">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TXN-JKL012</td>
+                                <td>Mike Johnson</td>
+                                <td><span class="badge badge-warning">Withdrawal</span></td>
+                                <td class="amount-negative">-₹1000.00</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>Bank Transfer</td>
+                                <td>2023-06-20 10:15</td>
+                                <td>
+                                    <button class="btn btn-outline btn-small">View</button>
+                                    <button class="btn btn-primary btn-small">Approve</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoutBtn = document.getElementById('logoutBtn');
+            
+            // Handle logout
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to logout?')) {
+                    // In a real implementation, this would call the backend logout endpoint
+                    window.location.href = '../../index.html';
+                }
+            });
+            
+            console.log('Admin transactions page loaded');
+        });
+    </script>
+</body>
+</html>

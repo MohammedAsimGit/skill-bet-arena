@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - SkillBet Arena</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/cyber-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="cosmic-theme">
+    <!-- Cosmic Background Elements -->
+    <div class="cosmic-background">
+        <div class="nebula"></div>
+        <div class="floating-planet planet-1"></div>
+        <div class="floating-planet planet-2"></div>
+        <div class="floating-planet planet-3"></div>
+        <div class="star-field">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="cosmic-navbar">
+        <div class="cosmic-nav-container">
+            <div class="cosmic-nav-logo">
+                <h2>SkillBet <span>Arena</span></h2>
+            </div>
+            <div class="cosmic-nav-icons">
+                <div class="nav-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="nav-icon" onclick="window.location.href='settings.html'">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="user-profile-cosmic">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic-cosmic">
+                    <div class="user-info">
+                        <span class="username-cosmic">CosmicPlayer</span>
+                        <span class="points">1,250 pts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="cosmic-hero">
+        <div class="cosmic-glow"></div>
+        <div class="container">
+            <div class="page-header">
+                <h1 class="cosmic-title">Leaderboard <span>Rankings</span></h1>
+                <p class="cosmic-subtitle">See where you rank among the top players</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Tabs -->
+    <section class="cosmic-games">
+        <div class="container">
+            <div class="leaderboard-tabs">
+                <button class="cosmic-btn secondary active">All Time</button>
+                <button class="cosmic-btn secondary">This Month</button>
+                <button class="cosmic-btn secondary">This Week</button>
+                <button class="cosmic-btn secondary">Today</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top 3 Players -->
+    <section class="cosmic-rewards">
+        <div class="container">
+            <h2 class="section-heading">Top Players</h2>
+            <div class="top-players-container">
+                <!-- First Place -->
+                <div class="player-card first">
+                    <div class="player-position">1</div>
+                    <div class="player-avatar">
+                        <img src="../assets/images/default-avatar.png" alt="Player">
+                    </div>
+                    <div class="player-info">
+                        <h3>QuizKing99</h3>
+                        <p>15,750 pts</p>
+                    </div>
+                    <div class="trophy gold">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                </div>
+                
+                <!-- Second Place -->
+                <div class="player-card second">
+                    <div class="player-position">2</div>
+                    <div class="player-avatar">
+                        <img src="../assets/images/default-avatar.png" alt="Player">
+                    </div>
+                    <div class="player-info">
+                        <h3>CodeMaster23</h3>
+                        <p>12,450 pts</p>
+                    </div>
+                    <div class="trophy silver">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                </div>
+                
+                <!-- Third Place -->
+                <div class="player-card third">
+                    <div class="player-position">3</div>
+                    <div class="player-avatar">
+                        <img src="../assets/images/default-avatar.png" alt="Player">
+                    </div>
+                    <div class="player-info">
+                        <h3>TypingPro</h3>
+                        <p>9,800 pts</p>
+                    </div>
+                    <div class="trophy bronze">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Remaining Players -->
+    <section class="cosmic-games">
+        <div class="container">
+            <h2 class="section-heading">Other Rankings</h2>
+            <div class="players-list">
+                <div class="players-list-header">
+                    <div class="header-rank">Rank</div>
+                    <div class="header-player">Player</div>
+                    <div class="header-points">Points</div>
+                </div>
+                <div class="player-list-item">
+                    <div class="player-rank">4</div>
+                    <div class="player-avatar-list">
+                        <img src="../assets/images/default-avatar.png" alt="Player">
+                    </div>
+                    <div class="player-name">BrainBuster</div>
+                    <div class="player-points">8,900 pts</div>
+                </div>
+                
+                <div class="player-list-item">
+                    <div class="player-rank">5</div>
+                    <div class="player-avatar-list">
+                        <img src="../assets/images/default-avatar.png" alt="Player">
+                    </div>
+                    <div class="player-name">LogicLord</div>
+                    <div class="player-points">7,200 pts</div>
+                </div>
+                
+                <div class="player-list-item">
+                    <div class="player-rank">6</div>
+                    <div class="player-avatar-list">
+                        <img src="../assets/images/default-avatar.png" alt="Player">
+                    </div>
+                    <div class="player-name">PuzzleMaster</div>
+                    <div class="player-points">6,500 pts</div>
+                </div>
+                
+                <div class="player-list-item">
+                    <div class="player-rank">7</div>
+                    <div class="player-avatar-list">
+                        <img src="../assets/images/default-avatar.png" alt="Player">
+                    </div>
+                    <div class="player-name">NumberCruncher</div>
+                    <div class="player-points">5,800 pts</div>
+                </div>
+                
+                <div class="player-list-item">
+                    <div class="player-rank">8</div>
+                    <div class="player-avatar-list">
+                        <img src="../assets/images/default-avatar.png" alt="Player">
+                    </div>
+                    <div class="player-name">SpeedDemon</div>
+                    <div class="player-points">5,100 pts</div>
+                </div>
+                
+                <div class="player-list-item">
+                    <div class="player-rank">9</div>
+                    <div class="player-avatar-list">
+                        <img src="../assets/images/default-avatar.png" alt="Player">
+                    </div>
+                    <div class="player-name">CodeWarrior</div>
+                    <div class="player-points">4,750 pts</div>
+                </div>
+                
+                <div class="player-list-item">
+                    <div class="player-rank">10</div>
+                    <div class="player-avatar-list">
+                        <img src="../assets/images/default-avatar.png" alt="Player">
+                    </div>
+                    <div class="player-name">QuizNinja</div>
+                    <div class="player-points">4,300 pts</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Trophies -->
+    <div class="floating-trophies">
+        <div class="floating-trophy-large gold">
+            <i class="fas fa-trophy"></i>
+        </div>
+        <div class="floating-trophy-large silver">
+            <i class="fas fa-trophy"></i>
+        </div>
+        <div class="floating-trophy-large bronze">
+            <i class="fas fa-trophy"></i>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="cosmic-bottom-nav">
+        <div class="nav-item-cosmic" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='games.html'">
+            <i class="fas fa-gamepad"></i>
+            <span>Games</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='wallet.html'">
+            <i class="fas fa-wallet"></i>
+            <span>Wallet</span>
+        </div>
+        <div class="nav-item-cosmic active" onclick="window.location.href='leaderboard.html'">
+            <i class="fas fa-trophy"></i>
+            <span>Leaderboard</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='profile.html'">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </div>
+    </nav>
+
+    <script src="../assets/js/cyber-dashboard.js"></script>
+</body>
+</html>

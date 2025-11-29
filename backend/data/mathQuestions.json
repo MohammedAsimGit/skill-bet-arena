@@ -1,0 +1,368 @@
+{
+  "beginner": [
+    {
+      "id": "b1",
+      "question": "What is 15 + 27?",
+      "options": ["42", "41", "43", "40"],
+      "correctAnswer": "42",
+      "category": "arithmetic",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b2",
+      "question": "What is 8 × 7?",
+      "options": ["54", "56", "58", "52"],
+      "correctAnswer": "56",
+      "category": "arithmetic",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b3",
+      "question": "What is 144 ÷ 12?",
+      "options": ["10", "11", "12", "13"],
+      "correctAnswer": "12",
+      "category": "arithmetic",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b4",
+      "question": "What is 3²?",
+      "options": ["6", "9", "8", "12"],
+      "correctAnswer": "9",
+      "category": "algebra",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b5",
+      "question": "What is the square root of 64?",
+      "options": ["6", "7", "8", "9"],
+      "correctAnswer": "8",
+      "category": "algebra",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b6",
+      "question": "If x + 5 = 12, what is x?",
+      "options": ["5", "6", "7", "8"],
+      "correctAnswer": "7",
+      "category": "algebra",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b7",
+      "question": "What is 25% of 80?",
+      "options": ["15", "20", "25", "30"],
+      "correctAnswer": "20",
+      "category": "arithmetic",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b8",
+      "question": "What is 3.5 + 2.7?",
+      "options": ["5.2", "6.2", "5.12", "6.12"],
+      "correctAnswer": "6.2",
+      "category": "arithmetic",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b9",
+      "question": "What is the perimeter of a square with side 5cm?",
+      "options": ["15cm", "20cm", "25cm", "30cm"],
+      "correctAnswer": "20cm",
+      "category": "geometry",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b10",
+      "question": "What is 7² - 5²?",
+      "options": ["24", "25", "26", "27"],
+      "correctAnswer": "24",
+      "category": "algebra",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b11",
+      "question": "What is 1/4 + 1/4?",
+      "options": ["1/2", "1/4", "1/8", "2/4"],
+      "correctAnswer": "1/2",
+      "category": "arithmetic",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b12",
+      "question": "What is 0.6 as a percentage?",
+      "options": ["6%", "60%", "0.6%", "600%"],
+      "correctAnswer": "60%",
+      "category": "arithmetic",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b13",
+      "question": "What is the area of a rectangle with length 8cm and width 5cm?",
+      "options": ["13cm²", "40cm²", "26cm²", "35cm²"],
+      "correctAnswer": "40cm²",
+      "category": "geometry",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b14",
+      "question": "What is 2³?",
+      "options": ["6", "8", "9", "12"],
+      "correctAnswer": "8",
+      "category": "algebra",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "b15",
+      "question": "What is 3/4 of 20?",
+      "options": ["10", "15", "12", "18"],
+      "correctAnswer": "15",
+      "category": "arithmetic",
+      "difficulty": "beginner"
+    }
+  ],
+  "intermediate": [
+    {
+      "id": "i1",
+      "question": "Solve for x: 2x + 7 = 15",
+      "options": ["3", "4", "5", "6"],
+      "correctAnswer": "4",
+      "category": "algebra",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i2",
+      "question": "What is the value of π (pi) approximately?",
+      "options": ["3.14", "3.16", "3.12", "3.18"],
+      "correctAnswer": "3.14",
+      "category": "geometry",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i3",
+      "question": "What is 15% of 240?",
+      "options": ["30", "36", "40", "45"],
+      "correctAnswer": "36",
+      "category": "arithmetic",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i4",
+      "question": "If a triangle has angles 45° and 65°, what is the third angle?",
+      "options": ["60°", "70°", "80°", "90°"],
+      "correctAnswer": "70°",
+      "category": "geometry",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i5",
+      "question": "What is the slope of the line y = 3x + 2?",
+      "options": ["2", "3", "5", "6"],
+      "correctAnswer": "3",
+      "category": "algebra",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i6",
+      "question": "What is √169?",
+      "options": ["11", "12", "13", "14"],
+      "correctAnswer": "13",
+      "category": "algebra",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i7",
+      "question": "Simplify: 3(x + 4) - 2(x - 1)",
+      "options": ["x + 10", "x + 14", "5x + 10", "x + 12"],
+      "correctAnswer": "x + 14",
+      "category": "algebra",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i8",
+      "question": "What is the area of a circle with radius 7cm? (Use π ≈ 22/7)",
+      "options": ["144cm²", "154cm²", "164cm²", "174cm²"],
+      "correctAnswer": "154cm²",
+      "category": "geometry",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i9",
+      "question": "What is 2⁵?",
+      "options": ["10", "25", "32", "64"],
+      "correctAnswer": "32",
+      "category": "algebra",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i10",
+      "question": "Solve: 3x - 7 = 2x + 5",
+      "options": ["10", "11", "12", "13"],
+      "correctAnswer": "12",
+      "category": "algebra",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i11",
+      "question": "What is the mean of 12, 15, 18, 21, 24?",
+      "options": ["17", "18", "19", "20"],
+      "correctAnswer": "18",
+      "category": "statistics",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i12",
+      "question": "What is 0.75 as a fraction?",
+      "options": ["1/4", "3/4", "1/2", "2/3"],
+      "correctAnswer": "3/4",
+      "category": "arithmetic",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i13",
+      "question": "If 5 workers can complete a job in 8 days, how long would 10 workers take?",
+      "options": ["2 days", "4 days", "6 days", "16 days"],
+      "correctAnswer": "4 days",
+      "category": "speed-maths",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i14",
+      "question": "What is the volume of a cube with side 4cm?",
+      "options": ["16cm³", "32cm³", "64cm³", "128cm³"],
+      "correctAnswer": "64cm³",
+      "category": "geometry",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "i15",
+      "question": "Factorize: x² - 9",
+      "options": ["(x-3)²", "(x+3)²", "(x-3)(x+3)", "(x-9)(x+1)"],
+      "correctAnswer": "(x-3)(x+3)",
+      "category": "algebra",
+      "difficulty": "intermediate"
+    }
+  ],
+  "expert": [
+    {
+      "id": "e1",
+      "question": "Solve the quadratic equation: x² - 5x + 6 = 0",
+      "options": ["x = 2, 3", "x = 1, 6", "x = -2, -3", "x = -1, -6"],
+      "correctAnswer": "x = 2, 3",
+      "category": "algebra",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e2",
+      "question": "What is the derivative of f(x) = 3x² + 2x - 5?",
+      "options": ["6x + 2", "6x - 2", "3x + 2", "6x² + 2"],
+      "correctAnswer": "6x + 2",
+      "category": "calculus",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e3",
+      "question": "In a right triangle, if one leg is 3 and hypotenuse is 5, what is the other leg?",
+      "options": ["3", "4", "5", "6"],
+      "correctAnswer": "4",
+      "category": "geometry",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e4",
+      "question": "What is the probability of rolling a sum of 7 with two dice?",
+      "options": ["1/6", "1/12", "1/36", "5/36"],
+      "correctAnswer": "1/6",
+      "category": "probability",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e5",
+      "question": "Solve for x: log₂(x) = 3",
+      "options": ["6", "8", "9", "12"],
+      "correctAnswer": "8",
+      "category": "algebra",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e6",
+      "question": "What is the sum of the first 10 positive integers?",
+      "options": ["45", "50", "55", "60"],
+      "correctAnswer": "55",
+      "category": "arithmetic",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e7",
+      "question": "If sin(θ) = 1/2, what is θ in degrees (0° ≤ θ ≤ 90°)?",
+      "options": ["30°", "45°", "60°", "90°"],
+      "correctAnswer": "30°",
+      "category": "trigonometry",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e8",
+      "question": "What is the determinant of matrix [[2, 3], [1, 4]]?",
+      "options": ["5", "7", "10", "11"],
+      "correctAnswer": "5",
+      "category": "algebra",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e9",
+      "question": "What is the limit of (x² - 1)/(x - 1) as x approaches 1?",
+      "options": ["0", "1", "2", "Undefined"],
+      "correctAnswer": "2",
+      "category": "calculus",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e10",
+      "question": "What is the area under the curve y = x from x = 0 to x = 2?",
+      "options": ["1", "2", "3", "4"],
+      "correctAnswer": "2",
+      "category": "calculus",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e11",
+      "question": "Solve: 2^(x+1) = 16",
+      "options": ["2", "3", "4", "5"],
+      "correctAnswer": "3",
+      "category": "algebra",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e12",
+      "question": "What is the standard deviation of the set {2, 4, 6, 8, 10}?",
+      "options": ["√8", "2√2", "4", "8"],
+      "correctAnswer": "2√2",
+      "category": "statistics",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e13",
+      "question": "If f(x) = x³, what is f'(2)?",
+      "options": ["6", "8", "12", "16"],
+      "correctAnswer": "12",
+      "category": "calculus",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e14",
+      "question": "What is the value of e (Euler's number) approximately?",
+      "options": ["2.71", "2.72", "2.73", "2.74"],
+      "correctAnswer": "2.72",
+      "category": "algebra",
+      "difficulty": "expert"
+    },
+    {
+      "id": "e15",
+      "question": "What is the integral of 2x dx from 0 to 3?",
+      "options": ["6", "9", "12", "18"],
+      "correctAnswer": "9",
+      "category": "calculus",
+      "difficulty": "expert"
+    }
+  ]
+}

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - SkillBet Arena</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/cyber-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="cosmic-theme">
+    <!-- Cosmic Background Elements -->
+    <div class="cosmic-background">
+        <div class="nebula"></div>
+        <div class="floating-planet planet-1"></div>
+        <div class="floating-planet planet-2"></div>
+        <div class="floating-planet planet-3"></div>
+        <div class="star-field">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="cosmic-navbar">
+        <div class="cosmic-nav-container">
+            <div class="cosmic-nav-logo">
+                <h2>SkillBet <span>Arena</span></h2>
+            </div>
+            <div class="cosmic-nav-icons">
+                <div class="nav-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="nav-icon">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="user-profile-cosmic">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic-cosmic">
+                    <div class="user-info">
+                        <span class="username-cosmic">CosmicPlayer</span>
+                        <span class="points">1,250 pts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Settings Header -->
+    <section class="cosmic-hero">
+        <div class="cosmic-glow"></div>
+        <div class="container">
+            <div class="page-header">
+                <h1 class="cosmic-title">Settings <span>Configuration</span></h1>
+                <p class="cosmic-subtitle">Customize your gaming experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Settings Content -->
+    <section class="cosmic-games">
+        <div class="container">
+            <div class="settings-grid">
+                <!-- Account Settings -->
+                <div class="settings-card glass-card">
+                    <div class="card-icon neon-blue">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Account Settings</h3>
+                        <p>Manage your profile and account information</p>
+                        <div class="card-options">
+                            <button class="cosmic-btn secondary option-btn">Edit Username</button>
+                            <button class="cosmic-btn secondary option-btn">Change Email</button>
+                            <button class="cosmic-btn secondary option-btn">Update Phone</button>
+                            <button class="cosmic-btn secondary option-btn danger" id="logoutBtn">Logout</button>
+                            <button class="cosmic-btn secondary option-btn danger">Delete Account</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Customization -->
+                <div class="settings-card glass-card">
+                    <div class="card-icon neon-pink">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Profile Customization</h3>
+                        <p>Personalize your profile appearance</p>
+                        <div class="card-options">
+                            <button class="cosmic-btn secondary option-btn">Change Avatar</button>
+                            <button class="cosmic-btn secondary option-btn">Select Theme Color</button>
+                            <div class="toggle-switch">
+                                <span>Badge Display</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-switch">
+                                <span>Gamer Tag Animation</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security & Login -->
+                <div class="settings-card glass-card">
+                    <div class="card-icon neon-purple">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Security & Login</h3>
+                        <p>Protect your account and manage access</p>
+                        <div class="card-options">
+                            <button class="cosmic-btn secondary option-btn">Change Password</button>
+                            <div class="toggle-switch">
+                                <span>Two-Factor Authentication</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <button class="cosmic-btn secondary option-btn">Login History</button>
+                            <div class="warning-badge">
+                                <i class="fas fa-exclamation-triangle"></i> Suspicious Login Detected
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="settings-card glass-card">
+                    <div class="card-icon neon-yellow">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Notifications</h3>
+                        <p>Control how you receive alerts</p>
+                        <div class="card-options">
+                            <div class="toggle-switch">
+                                <span>Game Alerts</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-switch">
+                                <span>Daily Rewards Reminder</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-switch">
+                                <span>Tournament Updates</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-switch">
+                                <span>Friend Requests</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wallet & Payments -->
+                <div class="settings-card glass-card">
+                    <div class="card-icon neon-green">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Wallet & Payments</h3>
+                        <p>Manage your payment methods and transactions</p>
+                        <div class="card-options">
+                            <button class="cosmic-btn secondary option-btn">Add Payment Method</button>
+                            <button class="cosmic-btn secondary option-btn">Withdraw Settings</button>
+                            <button class="cosmic-btn secondary option-btn">View Transaction Log</button>
+                            <div class="toggle-switch">
+                                <span>Auto-Withdrawal</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Preferences -->
+                <div class="settings-card glass-card">
+                    <div class="card-icon neon-cyan">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Game Preferences</h3>
+                        <p>Customize your gaming experience</p>
+                        <div class="card-options">
+                            <div class="form-group">
+                                <label>Graphics Quality</label>
+                                <select class="cosmic-select">
+                                    <option>Low</option>
+                                    <option selected>Medium</option>
+                                    <option>High</option>
+                                </select>
+                            </div>
+                            <div class="toggle-switch">
+                                <span>Sound Effects</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Music Volume</label>
+                                <input type="range" min="0" max="100" value="80" class="volume-slider">
+                            </div>
+                            <div class="toggle-switch">
+                                <span>Auto Play</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-switch">
+                                <span>Vibration</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Language & Region -->
+                <div class="settings-card glass-card">
+                    <div class="card-icon neon-orange">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Language & Region</h3>
+                        <p>Set your preferred language and timezone</p>
+                        <div class="card-options">
+                            <div class="form-group">
+                                <label>Language</label>
+                                <select class="cosmic-select">
+                                    <option>English 🇺🇸</option>
+                                    <option>Hindi 🇮🇳</option>
+                                    <option>Spanish 🇪🇸</option>
+                                    <option>French 🇫🇷</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Timezone</label>
+                                <select class="cosmic-select">
+                                    <option>UTC+5:30 (India)</option>
+                                    <option>UTC+0:00 (GMT)</option>
+                                    <option>UTC-5:00 (Eastern)</option>
+                                    <option>UTC+1:00 (Central Europe)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy Controls -->
+                <div class="settings-card glass-card">
+                    <div class="card-icon neon-purple">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Privacy Controls</h3>
+                        <p>Manage your privacy settings</p>
+                        <div class="card-options">
+                            <div class="toggle-switch">
+                                <span>Hide Online Status</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <button class="cosmic-btn secondary option-btn">Blocked Players List</button>
+                            <div class="toggle-switch">
+                                <span>Allow Friend Requests</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-switch">
+                                <span>Data Sharing Permissions</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App Theme Mode -->
+                <div class="settings-card glass-card">
+                    <div class="card-icon neon-blue">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>App Theme Mode</h3>
+                        <p>Choose your preferred theme</p>
+                        <div class="card-options">
+                            <div class="theme-options">
+                                <div class="theme-option">
+                                    <input type="radio" id="light" name="theme" value="light">
+                                    <label for="light">Light</label>
+                                </div>
+                                <div class="theme-option">
+                                    <input type="radio" id="dark" name="theme" value="dark" checked>
+                                    <label for="dark">Dark</label>
+                                </div>
+                                <div class="theme-option">
+                                    <input type="radio" id="ultra-dark" name="theme" value="ultra-dark">
+                                    <label for="ultra-dark">Ultra Dark</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help & Support -->
+                <div class="settings-card glass-card">
+                    <div class="card-icon neon-red">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Help & Support</h3>
+                        <p>Get assistance and information</p>
+                        <div class="card-options">
+                            <button class="cosmic-btn secondary option-btn">FAQ</button>
+                            <button class="cosmic-btn secondary option-btn">Report a Problem</button>
+                            <button class="cosmic-btn secondary option-btn">Contact Support</button>
+                            <button class="cosmic-btn secondary option-btn">Terms & Policies</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Section -->
+    <section class="cosmic-footer">
+        <div class="container">
+            <div class="version-info">
+                <p>v1.0.0</p>
+                <p>Powered by Asim Gaming Engine ✨</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="cosmic-bottom-nav">
+        <div class="nav-item-cosmic" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='games.html'">
+            <i class="fas fa-gamepad"></i>
+            <span>Games</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='wallet.html'">
+            <i class="fas fa-wallet"></i>
+            <span>Wallet</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='leaderboard.html'">
+            <i class="fas fa-trophy"></i>
+            <span>Leaderboard</span>
+        </div>
+        <div class="nav-item-cosmic active" onclick="window.location.href='settings.html'">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+        </div>
+    </nav>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/cyber-dashboard.js"></script>
+    <script>
+        // Add logout functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', async function() {
+                    // Confirm logout
+                    if (confirm('Are you sure you want to logout?')) {
+                        try {
+                            // Use the existing logout function from main.js
+                            await SkillBetArena.logoutUser();
+                        } catch (error) {
+                            console.error('Logout error:', error);
+                            // Even if logout fails, redirect to welcome page
+                            window.location.href = '../welcome.html';
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

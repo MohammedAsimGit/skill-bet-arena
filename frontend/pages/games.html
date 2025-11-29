@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - SkillBet Arena</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/cyber-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="cosmic-theme">
+    <!-- Cosmic Background Elements -->
+    <div class="cosmic-background">
+        <div class="nebula"></div>
+        <div class="floating-planet planet-1"></div>
+        <div class="floating-planet planet-2"></div>
+        <div class="floating-planet planet-3"></div>
+        <div class="star-field">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="cosmic-navbar">
+        <div class="cosmic-nav-container">
+            <div class="cosmic-nav-logo">
+                <h2>SkillBet <span>Arena</span></h2>
+            </div>
+            <div class="cosmic-nav-icons">
+                <div class="nav-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="nav-icon" onclick="window.location.href='settings.html'">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="user-profile-cosmic">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic-cosmic">
+                    <div class="user-info">
+                        <span class="username-cosmic">CosmicPlayer</span>
+                        <span class="points">1,250 pts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="cosmic-hero">
+        <div class="cosmic-glow"></div>
+        <div class="container">
+            <div class="page-header">
+                <h1 class="cosmic-title">Games <span>Arena</span></h1>
+                <p class="cosmic-subtitle">Choose your challenge and compete</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Categories -->
+    <section class="cosmic-games">
+        <div class="container">
+            <div class="search-container">
+                <div class="cosmic-search-bar">
+                    <input type="text" placeholder="Search games..." class="search-input">
+                    <button class="cosmic-btn secondary"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
+            <div class="categories-container">
+                <div class="category-tabs">
+                    <button class="cosmic-btn secondary active">All Games</button>
+                    <button class="cosmic-btn secondary">Coding</button>
+                    <button class="cosmic-btn secondary">Math</button>
+                    <button class="cosmic-btn secondary">Memory</button>
+                    <button class="cosmic-btn secondary">Typing</button>
+                </div>
+            </div>
+            
+            <div class="games-grid-cosmic">
+                <!-- Coding Challenge -->
+                <div class="cosmic-game-card">
+                    <div class="game-icon-cosmic">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Coding Challenge</h3>
+                    <p>Test your programming skills with real-world problems and algorithms.</p>
+                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                </div>
+
+                <!-- Maths Quiz -->
+                <div class="cosmic-game-card">
+                    <div class="game-icon-cosmic">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Maths Quiz Battle</h3>
+                    <p>Compete in fast-paced mathematical challenges across various topics.</p>
+                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                </div>
+
+                <!-- Memory Pattern -->
+                <div class="cosmic-game-card">
+                    <div class="game-icon-cosmic">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Memory Pattern</h3>
+                    <p>Train and test your memory with increasingly complex patterns.</p>
+                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                </div>
+
+                <!-- Typing Speed -->
+                <div class="cosmic-game-card">
+                    <div class="game-icon-cosmic">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3>Typing Speed</h3>
+                    <p>Improve your typing speed and accuracy in competitive environments.</p>
+                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                </div>
+                
+                <!-- Logic Puzzle -->
+                <div class="cosmic-game-card">
+                    <div class="game-icon-cosmic">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Logic Puzzle</h3>
+                    <p>Solve intricate puzzles with logical reasoning.</p>
+                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                </div>
+                
+                <!-- Speed Reaction -->
+                <div class="cosmic-game-card">
+                    <div class="game-icon-cosmic">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Speed Reaction</h3>
+                    <p>React faster than your opponents in real-time challenges.</p>
+                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Trophy Illustration -->
+    <div class="floating-trophy">
+        <i class="fas fa-trophy"></i>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="cosmic-bottom-nav">
+        <div class="nav-item-cosmic" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="nav-item-cosmic active" onclick="window.location.href='games.html'">
+            <i class="fas fa-gamepad"></i>
+            <span>Games</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='wallet.html'">
+            <i class="fas fa-wallet"></i>
+            <span>Wallet</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='leaderboard.html'">
+            <i class="fas fa-trophy"></i>
+            <span>Leaderboard</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='profile.html'">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </div>
+    </nav>
+
+    <script src="../assets/js/cyber-dashboard.js"></script>
+</body>
+</html>

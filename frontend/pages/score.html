@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Score - SkillBet Arena</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>SkillBet <span>Arena</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="games.html" class="nav-link">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="wallet.html" class="nav-link">Wallet</a>
+                </li>
+            </ul>
+            <div class="nav-auth">
+                <button id="logoutBtn" class="btn btn-outline">Logout</button>
+                <div class="user-profile">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic">
+                    <span class="username">User</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Score Header -->
+    <section class="score-header">
+        <div class="container">
+            <div class="score-info">
+                <div class="game-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="game-details">
+                    <h1>Coding Challenge</h1>
+                    <p>Two Sum Problem</p>
+                    <div class="game-meta">
+                        <span class="badge badge-success">Completed</span>
+                        <span><i class="fas fa-calendar"></i> Today, 14:30</span>
+                        <span><i class="fas fa-trophy"></i> Position: 3rd</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Score Summary -->
+    <section class="score-summary">
+        <div class="container">
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Score</h3>
+                        <p class="score-value">85</p>
+                        <p class="score-max">/100</p>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Time Taken</h3>
+                        <p class="time-value">2:45</p>
+                        <p class="time-unit">minutes</p>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-memory"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Memory Used</h3>
+                        <p class="memory-value">15</p>
+                        <p class="memory-unit">MB</p>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Test Cases</h3>
+                        <p class="tests-value">8/10</p>
+                        <p class="tests-unit">Passed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Results -->
+    <section class="detailed-results">
+        <div class="container">
+            <h2>Detailed Results</h2>
+            
+            <div class="results-tabs">
+                <button class="tab-btn active" data-tab="overview">Overview</button>
+                <button class="tab-btn" data-tab="testcases">Test Cases</button>
+                <button class="tab-btn" data-tab="solution">Your Solution</button>
+                <button class="tab-btn" data-tab="leaderboard">Leaderboard</button>
+            </div>
+            
+            <div class="tab-content active" id="overview-tab">
+                <div class="performance-metrics">
+                    <h3>Performance Metrics</h3>
+                    <div class="metric">
+                        <span>Accuracy:</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                        <span>80%</span>
+                    </div>
+                    <div class="metric">
+                        <span>Speed:</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                        <span>70%</span>
+                    </div>
+                    <div class="metric">
+                        <span>Efficiency:</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                        <span>85%</span>
+                    </div>
+                </div>
+                
+                <div class="recommendations">
+                    <h3>Recommendations</h3>
+                    <ul>
+                        <li><i class="fas fa-lightbulb"></i> Improve time complexity for better speed scores</li>
+                        <li><i class="fas fa-lightbulb"></i> Add edge case handling for 100% accuracy</li>
+                        <li><i class="fas fa-lightbulb"></i> Optimize memory usage for efficiency</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="testcases-tab">
+                <div class="test-cases">
+                    <div class="test-case passed">
+                        <div class="test-header">
+                            <span class="test-status"><i class="fas fa-check-circle"></i> Passed</span>
+                            <span class="test-name">Sample Test 1</span>
+                        </div>
+                        <div class="test-input">
+                            <strong>Input:</strong> [2,7,11,15], 9
+                        </div>
+                        <div class="test-output">
+                            <strong>Output:</strong> [0,1]
+                        </div>
+                    </div>
+                    
+                    <div class="test-case passed">
+                        <div class="test-header">
+                            <span class="test-status"><i class="fas fa-check-circle"></i> Passed</span>
+                            <span class="test-name">Sample Test 2</span>
+                        </div>
+                        <div class="test-input">
+                            <strong>Input:</strong> [3,2,4], 6
+                        </div>
+                        <div class="test-output">
+                            <strong>Output:</strong> [1,2]
+                        </div>
+                    </div>
+                    
+                    <div class="test-case failed">
+                        <div class="test-header">
+                            <span class="test-status"><i class="fas fa-times-circle"></i> Failed</span>
+                            <span class="test-name">Edge Case: Empty Array</span>
+                        </div>
+                        <div class="test-input">
+                            <strong>Input:</strong> [], 0
+                        </div>
+                        <div class="test-output">
+                            <strong>Expected:</strong> []
+                        </div>
+                        <div class="test-output">
+                            <strong>Your Output:</strong> Error
+                        </div>
+                    </div>
+                    
+                    <div class="test-case failed">
+                        <div class="test-header">
+                            <span class="test-status"><i class="fas fa-times-circle"></i> Failed</span>
+                            <span class="test-name">Edge Case: Duplicate Numbers</span>
+                        </div>
+                        <div class="test-input">
+                            <strong>Input:</strong> [3,3], 6
+                        </div>
+                        <div class="test-output">
+                            <strong>Expected:</strong> [0,1]
+                        </div>
+                        <div class="test-output">
+                            <strong>Your Output:</strong> Error
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="solution-tab">
+                <div class="solution-code">
+                    <h3>Your Solution</h3>
+                    <pre><code class="language-javascript">function twoSum(nums, target) {
+    // Your code here
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] === target) {
+                return [i, j];
+            }
+        }
+    }
+    return [];
+}</code></pre>
+                </div>
+                
+                <div class="solution-analysis">
+                    <h3>Analysis</h3>
+                    <p><strong>Time Complexity:</strong> O(n²) - Can be optimized to O(n) using hash map</p>
+                    <p><strong>Space Complexity:</strong> O(1) - Good space efficiency</p>
+                    <p><strong>Issues:</strong> Doesn't handle edge cases properly</p>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="leaderboard-tab">
+                <div class="mini-leaderboard">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Score</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="rank gold">1</span></td>
+                                <td>ProCoder99</td>
+                                <td>95</td>
+                                <td>1:30</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank silver">2</span></td>
+                                <td>CodeMaster</td>
+                                <td>92</td>
+                                <td>1:45</td>
+                            </tr>
+                            <tr class="your-rank">
+                                <td><span class="rank bronze">3</span></td>
+                                <td>You</td>
+                                <td>85</td>
+                                <td>2:45</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>DevExpert</td>
+                                <td>82</td>
+                                <td>3:10</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>ScriptNinja</td>
+                                <td>78</td>
+                                <td>2:55</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Buttons -->
+    <section class="score-actions">
+        <div class="container">
+            <button class="btn btn-primary">
+                <i class="fas fa-redo"></i> Play Again
+            </button>
+            <button class="btn btn-outline">
+                <i class="fas fa-share-alt"></i> Share Result
+            </button>
+            <button class="btn btn-outline">
+                <i class="fas fa-comment"></i> Discuss Solution
+            </button>
+        </div>
+    </section>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoutBtn = document.getElementById('logoutBtn');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            // Handle logout
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to logout?')) {
+                    SkillBetArena.logoutUser();
+                }
+            });
+            
+            // Handle tab switching
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = button.dataset.tab;
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+            
+            console.log('Score page loaded');
+        });
+    </script>
+</body>
+</html>

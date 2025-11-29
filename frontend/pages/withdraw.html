@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw Money - SkillBet Arena</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>SkillBet <span>Arena</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="games.html" class="nav-link">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="wallet.html" class="nav-link">Wallet</a>
+                </li>
+            </ul>
+            <div class="nav-auth">
+                <button id="logoutBtn" class="btn btn-outline">Logout</button>
+                <div class="user-profile">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic">
+                    <span class="username">User</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Withdraw Header -->
+    <section class="wallet-header">
+        <div class="container">
+            <div class="wallet-info">
+                <h1>Withdraw Money</h1>
+                <div class="wallet-balance">
+                    <span>Available Balance</span>
+                    <h2 id="availableBalance">₹0.00</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Withdraw Form -->
+    <section class="withdraw-form">
+        <div class="container">
+            <div class="form-card">
+                <h2>Withdrawal Details</h2>
+                
+                <div class="form-group">
+                    <label for="withdrawAmount">Amount to Withdraw (₹)</label>
+                    <input type="number" id="withdrawAmount" min="100" max="50000" placeholder="Enter amount (Min: ₹100)">
+                    <small>Minimum withdrawal amount is ₹100. Processing fee: ₹10 per transaction</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bankAccount">Bank Account</label>
+                    <select id="bankAccount">
+                        <option value="">Select bank account</option>
+                        <option value="account1">****1234 - State Bank of India</option>
+                        <option value="account2">****5678 - HDFC Bank</option>
+                        <option value="account3">****9012 - ICICI Bank</option>
+                    </select>
+                    <button id="addAccountBtn" class="btn btn-outline btn-small">
+                        <i class="fas fa-plus"></i> Add New Account
+                    </button>
+                </div>
+                
+                <div class="withdraw-summary">
+                    <h3>Withdrawal Summary</h3>
+                    <div class="summary-item">
+                        <span>Amount:</span>
+                        <span id="summaryAmount">₹0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Processing Fee:</span>
+                        <span id="processingFee">₹10.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>You'll Receive:</span>
+                        <span id="netAmount">₹0.00</span>
+                    </div>
+                </div>
+                
+                <button id="requestWithdrawalBtn" class="btn btn-primary btn-block" disabled>
+                    Request Withdrawal
+                </button>
+            </div>
+            
+            <div class="withdraw-info">
+                <h3>Withdrawal Information</h3>
+                <ul>
+                    <li><i class="fas fa-clock"></i> Processing Time: 24-48 hours</li>
+                    <li><i class="fas fa-rupee-sign"></i> Minimum Withdrawal: ₹100</li>
+                    <li><i class="fas fa-exclamation-circle"></i> Processing Fee: ₹10 per transaction</li>
+                    <li><i class="fas fa-shield-alt"></i> Secure & Encrypted Transactions</li>
+                </ul>
+                
+                <div class="withdraw-limits">
+                    <h4>Daily Withdrawal Limits</h4>
+                    <div class="limit-item">
+                        <span>Free Users:</span>
+                        <span>₹5,000/day</span>
+                    </div>
+                    <div class="limit-item">
+                        <span>Gold Pass:</span>
+                        <span>₹25,000/day</span>
+                    </div>
+                    <div class="limit-item">
+                        <span>Elite Pass:</span>
+                        <span>₹1,00,000/day</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Account Modal -->
+    <div id="addAccountModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Bank Account</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="addAccountForm">
+                    <div class="form-group">
+                        <label for="accountHolderName">Account Holder Name</label>
+                        <input type="text" id="accountHolderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bankName">Bank Name</label>
+                        <input type="text" id="bankName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountNumber">Account Number</label>
+                        <input type="text" id="accountNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ifscCode">IFSC Code</label>
+                        <input type="text" id="ifscCode" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Add Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoutBtn = document.getElementById('logoutBtn');
+            const withdrawAmountInput = document.getElementById('withdrawAmount');
+            const bankAccountSelect = document.getElementById('bankAccount');
+            const addAccountBtn = document.getElementById('addAccountBtn');
+            const requestWithdrawalBtn = document.getElementById('requestWithdrawalBtn');
+            const addAccountModal = document.getElementById('addAccountModal');
+            const closeButtons = document.querySelectorAll('.close');
+            
+            // Summary elements
+            const summaryAmount = document.getElementById('summaryAmount');
+            const processingFee = document.getElementById('processingFee');
+            const netAmount = document.getElementById('netAmount');
+            
+            // Handle logout
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to logout?')) {
+                    SkillBetArena.logoutUser();
+                }
+            });
+            
+            // Handle withdraw amount input
+            withdrawAmountInput.addEventListener('input', () => {
+                const amount = parseFloat(withdrawAmountInput.value) || 0;
+                
+                // Update summary
+                summaryAmount.textContent = `₹${amount.toFixed(2)}`;
+                
+                // Calculate net amount (amount - processing fee)
+                const fee = amount > 0 ? 10 : 0;
+                const net = amount > 0 ? amount - fee : 0;
+                
+                processingFee.textContent = `₹${fee.toFixed(2)}`;
+                netAmount.textContent = `₹${net.toFixed(2)}`;
+                
+                // Enable/disable withdrawal button
+                requestWithdrawalBtn.disabled = (amount < 100 || !bankAccountSelect.value);
+            });
+            
+            // Handle bank account selection
+            bankAccountSelect.addEventListener('change', () => {
+                const amount = parseFloat(withdrawAmountInput.value) || 0;
+                requestWithdrawalBtn.disabled = (amount < 100 || !bankAccountSelect.value);
+            });
+            
+            // Handle add account button
+            addAccountBtn.addEventListener('click', () => {
+                addAccountModal.style.display = 'block';
+            });
+            
+            // Handle close modal
+            closeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    addAccountModal.style.display = 'none';
+                });
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', (event) => {
+                if (event.target === addAccountModal) {
+                    addAccountModal.style.display = 'none';
+                }
+            });
+            
+            // Handle add account form submission
+            document.getElementById('addAccountForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // In a real implementation, this would send data to the backend
+                // For demo purposes, we'll just show a success message
+                alert('Bank account added successfully!');
+                addAccountModal.style.display = 'none';
+                document.getElementById('addAccountForm').reset();
+            });
+            
+            // Handle request withdrawal
+            requestWithdrawalBtn.addEventListener('click', async () => {
+                const amount = parseFloat(withdrawAmountInput.value);
+                const bankAccount = bankAccountSelect.value;
+                
+                if (amount < 100) {
+                    alert('Minimum withdrawal amount is ₹100');
+                    return;
+                }
+                
+                if (!bankAccount) {
+                    alert('Please select a bank account');
+                    return;
+                }
+                
+                try {
+                    // Show loading state
+                    requestWithdrawalBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                    requestWithdrawalBtn.disabled = true;
+                    
+                    // In a real implementation, this would send a withdrawal request to the backend
+                    // For demo purposes, we'll just show a success message
+                    setTimeout(() => {
+                        alert(`Withdrawal request for ₹${amount} submitted successfully! It will be processed within 24-48 hours.`);
+                        
+                        // Reset form
+                        withdrawAmountInput.value = '';
+                        bankAccountSelect.selectedIndex = 0;
+                        summaryAmount.textContent = '₹0.00';
+                        processingFee.textContent = '₹10.00';
+                        netAmount.textContent = '₹0.00';
+                        requestWithdrawalBtn.disabled = true;
+                        requestWithdrawalBtn.textContent = 'Request Withdrawal';
+                    }, 1500);
+                } catch (error) {
+                    alert('Failed to process withdrawal: ' + error.message);
+                    requestWithdrawalBtn.textContent = 'Request Withdrawal';
+                    requestWithdrawalBtn.disabled = false;
+                }
+            });
+            
+            // Load available balance (in a real app, this would come from API)
+            // For demo purposes, we'll use a mock value
+            document.getElementById('availableBalance').textContent = '₹1,250.00';
+            
+            console.log('Withdraw page loaded');
+        });
+    </script>
+</body>
+</html>

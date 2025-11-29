@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users - SkillBet Arena Admin</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Navigation -->
+    <nav class="admin-nav">
+        <div class="admin-nav-container">
+            <div class="admin-nav-logo">
+                <h2>SkillBet <span>Arena</span> Admin</h2>
+            </div>
+            <ul class="admin-nav-menu">
+                <li class="admin-nav-item">
+                    <a href="dashboard.html" class="admin-nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="contests.html" class="admin-nav-link">
+                        <i class="fas fa-trophy"></i>
+                        <span>Contests</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="users.html" class="admin-nav-link active">
+                        <i class="fas fa-users"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="transactions.html" class="admin-nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="withdrawals.html" class="admin-nav-link">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Withdrawals</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="settings.html" class="admin-nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="admin-nav-footer">
+                <button id="logoutBtn" class="btn btn-outline btn-small">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="admin-header">
+            <h1>Manage Users</h1>
+            <div class="admin-header-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search users...">
+                </div>
+                <div class="admin-user">
+                    <img src="../../assets/images/default-avatar.png" alt="Admin" class="admin-avatar">
+                    <span>Admin User</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Users Table -->
+        <section class="admin-content">
+            <div class="container">
+                <div class="admin-section-header">
+                    <h2>All Users</h2>
+                    <div class="filter-options">
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="banned">Banned</option>
+                        </select>
+                        <select id="sortFilter">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="highestEarnings">Highest Earnings</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Wallet Balance</th>
+                                <th>Games Played</th>
+                                <th>Win Rate</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>USR-ABC123</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="../../assets/images/default-avatar.png" alt="User" class="table-avatar">
+                                        <span>John Doe</span>
+                                    </div>
+                                </td>
+                                <td>john.doe@example.com</td>
+                                <td>₹1,250.00</td>
+                                <td>42</td>
+                                <td>68%</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>
+                                    <button class="btn btn-outline btn-small">View</button>
+                                    <button class="btn btn-danger btn-small">Ban</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>USR-DEF456</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="../../assets/images/default-avatar.png" alt="User" class="table-avatar">
+                                        <span>Jane Smith</span>
+                                    </div>
+                                </td>
+                                <td>jane.smith@example.com</td>
+                                <td>₹850.00</td>
+                                <td>28</td>
+                                <td>72%</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>
+                                    <button class="btn btn-outline btn-small">View</button>
+                                    <button class="btn btn-danger btn-small">Ban</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>USR-GHI789</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="../../assets/images/default-avatar.png" alt="User" class="table-avatar">
+                                        <span>Mike Johnson</span>
+                                    </div>
+                                </td>
+                                <td>mike.johnson@example.com</td>
+                                <td>₹2,100.00</td>
+                                <td>65</td>
+                                <td>75%</td>
+                                <td><span class="status-badge banned">Banned</span></td>
+                                <td>
+                                    <button class="btn btn-outline btn-small">View</button>
+                                    <button class="btn btn-primary btn-small">Unban</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>USR-JKL012</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="../../assets/images/default-avatar.png" alt="User" class="table-avatar">
+                                        <span>Sarah Wilson</span>
+                                    </div>
+                                </td>
+                                <td>sarah.wilson@example.com</td>
+                                <td>₹450.00</td>
+                                <td>18</td>
+                                <td>62%</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>
+                                    <button class="btn btn-outline btn-small">View</button>
+                                    <button class="btn btn-danger btn-small">Ban</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoutBtn = document.getElementById('logoutBtn');
+            
+            // Handle logout
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to logout?')) {
+                    // In a real implementation, this would call the backend logout endpoint
+                    window.location.href = '../../index.html';
+                }
+            });
+            
+            console.log('Admin users page loaded');
+        });
+    </script>
+</body>
+</html>

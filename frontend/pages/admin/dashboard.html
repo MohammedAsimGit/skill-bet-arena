@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SkillBet Arena</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Navigation -->
+    <nav class="admin-nav">
+        <div class="admin-nav-container">
+            <div class="admin-nav-logo">
+                <h2>SkillBet <span>Arena</span> Admin</h2>
+            </div>
+            <ul class="admin-nav-menu">
+                <li class="admin-nav-item">
+                    <a href="dashboard.html" class="admin-nav-link active">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="contests.html" class="admin-nav-link">
+                        <i class="fas fa-trophy"></i>
+                        <span>Contests</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="users.html" class="admin-nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="transactions.html" class="admin-nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="withdrawals.html" class="admin-nav-link">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Withdrawals</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="settings.html" class="admin-nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="admin-nav-footer">
+                <button id="logoutBtn" class="btn btn-outline btn-small">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <div class="admin-header-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="admin-user">
+                    <img src="../../assets/images/default-avatar.png" alt="Admin" class="admin-avatar">
+                    <span>Admin User</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Overview -->
+        <section class="admin-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Users</h3>
+                            <p id="totalUsers">1,240</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Active Contests</h3>
+                            <p id="activeContests">24</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Revenue</h3>
+                            <p id="totalRevenue">₹45,200</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Transactions</h3>
+                            <p id="totalTransactions">890</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="admin-recent">
+            <div class="container">
+                <div class="admin-section-header">
+                    <h2>Recent Activity</h2>
+                </div>
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h3>Recent Users</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-user">
+                                    <img src="../../assets/images/default-avatar.png" alt="User">
+                                    <div>
+                                        <h4>John Doe</h4>
+                                        <p>Registered 2 hours ago</p>
+                                    </div>
+                                </div>
+                                <span class="activity-status success">Active</span>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-user">
+                                    <img src="../../assets/images/default-avatar.png" alt="User">
+                                    <div>
+                                        <h4>Jane Smith</h4>
+                                        <p>Registered 5 hours ago</p>
+                                    </div>
+                                </div>
+                                <span class="activity-status warning">Pending</span>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-user">
+                                    <img src="../../assets/images/default-avatar.png" alt="User">
+                                    <div>
+                                        <h4>Mike Johnson</h4>
+                                        <p>Registered 1 day ago</p>
+                                    </div>
+                                </div>
+                                <span class="activity-status success">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-card">
+                        <h3>Recent Transactions</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-transaction">
+                                    <h4>Deposit</h4>
+                                    <p>₹500 from User #12345</p>
+                                </div>
+                                <span class="activity-amount positive">+₹500</span>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-transaction">
+                                    <h4>Contest Entry</h4>
+                                    <p>₹50 from User #67890</p>
+                                </div>
+                                <span class="activity-amount negative">-₹50</span>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-transaction">
+                                    <h4>Winnings</h4>
+                                    <p>₹450 to User #12345</p>
+                                </div>
+                                <span class="activity-amount negative">-₹450</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="admin-actions">
+            <div class="container">
+                <div class="admin-section-header">
+                    <h2>Quick Actions</h2>
+                </div>
+                <div class="actions-grid">
+                    <button class="action-card">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Create Contest</span>
+                    </button>
+                    <button class="action-card">
+                        <i class="fas fa-ban"></i>
+                        <span>Ban User</span>
+                    </button>
+                    <button class="action-card">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Approve Withdrawal</span>
+                    </button>
+                    <button class="action-card">
+                        <i class="fas fa-cog"></i>
+                        <span>Platform Settings</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoutBtn = document.getElementById('logoutBtn');
+            
+            // Handle logout
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to logout?')) {
+                    // In a real implementation, this would call the backend logout endpoint
+                    window.location.href = '../../index.html';
+                }
+            });
+            
+            console.log('Admin dashboard loaded');
+        });
+    </script>
+</body>
+</html>

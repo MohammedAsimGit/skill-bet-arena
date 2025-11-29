@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Challenge - SkillBet Arena</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>SkillBet <span>Arena</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="games.html" class="nav-link">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="wallet.html" class="nav-link">Wallet</a>
+                </li>
+            </ul>
+            <div class="nav-auth">
+                <button id="logoutBtn" class="btn btn-outline">Logout</button>
+                <div class="user-profile">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic">
+                    <span class="username">User</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Game Header -->
+    <section class="game-header">
+        <div class="container">
+            <div class="game-info">
+                <h1>Coding Challenge</h1>
+                <div class="contest-info">
+                    <div class="info-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Prize: ₹450</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-users"></i>
+                        <span>Players: 10/10</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-rupee-sign"></i>
+                        <span>Entry: ₹50</span>
+                    </div>
+                </div>
+            </div>
+            <div class="game-timer">
+                <div class="timer-display">
+                    <span>Time Remaining</span>
+                    <h2 id="timer">30:00</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Content -->
+    <section class="game-content">
+        <div class="container">
+            <div class="game-layout">
+                <!-- Problem Statement -->
+                <div class="problem-section">
+                    <div class="section-card">
+                        <h3>Problem Statement</h3>
+                        <div class="problem-description">
+                            <p>Given an array of integers <code>nums</code> and an integer <code>target</code>, return indices of the two numbers such that they add up to <code>target</code>.</p>
+                            <p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+                            <p>You can return the answer in any order.</p>
+                            
+                            <h4>Example 1:</h4>
+                            <p><strong>Input:</strong> nums = [2,7,11,15], target = 9</p>
+                            <p><strong>Output:</strong> [0,1]</p>
+                            <p><strong>Explanation:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].</p>
+                            
+                            <h4>Example 2:</h4>
+                            <p><strong>Input:</strong> nums = [3,2,4], target = 6</p>
+                            <p><strong>Output:</strong> [1,2]</p>
+                            
+                            <h4>Example 3:</h4>
+                            <p><strong>Input:</strong> nums = [3,3], target = 6</p>
+                            <p><strong>Output:</strong> [0,1]</p>
+                            
+                            <h4>Constraints:</h4>
+                            <ul>
+                                <li>2 <= nums.length <= 10<sup>4</sup></li>
+                                <li>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></li>
+                                <li>-10<sup>9</sup> <= target <= 10<sup>9</sup></li>
+                                <li>Only one valid answer exists.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Code Editor -->
+                <div class="editor-section">
+                    <div class="section-card">
+                        <div class="editor-header">
+                            <h3>Code Editor</h3>
+                            <div class="language-selector">
+                                <select id="languageSelect">
+                                    <option value="javascript">JavaScript</option>
+                                    <option value="python">Python</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="code-editor">
+                            <textarea id="codeArea" spellcheck="false">// Write your solution here
+function twoSum(nums, target) {
+    // Your code here
+}</textarea>
+                        </div>
+                        <div class="editor-actions">
+                            <button id="runCodeBtn" class="btn btn-outline">
+                                <i class="fas fa-play"></i> Run Code
+                            </button>
+                            <button id="submitCodeBtn" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Submit Solution
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Test Cases -->
+                <div class="test-section">
+                    <div class="section-card">
+                        <h3>Test Cases</h3>
+                        <div class="test-cases">
+                            <div class="test-case passed">
+                                <div class="test-header">
+                                    <span class="test-status"><i class="fas fa-check-circle"></i> Passed</span>
+                                    <span class="test-name">Sample Test 1</span>
+                                </div>
+                                <div class="test-input">
+                                    <strong>Input:</strong> [2,7,11,15], 9
+                                </div>
+                                <div class="test-output">
+                                    <strong>Output:</strong> [0,1]
+                                </div>
+                            </div>
+                            
+                            <div class="test-case failed">
+                                <div class="test-header">
+                                    <span class="test-status"><i class="fas fa-times-circle"></i> Failed</span>
+                                    <span class="test-name">Sample Test 2</span>
+                                </div>
+                                <div class="test-input">
+                                    <strong>Input:</strong> [3,2,4], 6
+                                </div>
+                                <div class="test-output">
+                                    <strong>Expected:</strong> [1,2]
+                                </div>
+                                <div class="test-output">
+                                    <strong>Your Output:</strong> []
+                                </div>
+                            </div>
+                            
+                            <div class="test-case">
+                                <div class="test-header">
+                                    <span class="test-status"><i class="fas fa-question-circle"></i> Not Run</span>
+                                    <span class="test-name">Sample Test 3</span>
+                                </div>
+                                <div class="test-input">
+                                    <strong>Input:</strong> [3,3], 6
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoutBtn = document.getElementById('logoutBtn');
+            const runCodeBtn = document.getElementById('runCodeBtn');
+            const submitCodeBtn = document.getElementById('submitCodeBtn');
+            const timerDisplay = document.getElementById('timer');
+            
+            // Handle logout
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to logout?')) {
+                    SkillBetArena.logoutUser();
+                }
+            });
+            
+            // Handle run code
+            runCodeBtn.addEventListener('click', () => {
+                const code = document.getElementById('codeArea').value;
+                const language = document.getElementById('languageSelect').value;
+                
+                // Show loading state
+                runCodeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Running...';
+                runCodeBtn.disabled = true;
+                
+                // In a real implementation, this would send the code to the backend for execution
+                // For demo purposes, we'll just show a success message after a delay
+                setTimeout(() => {
+                    alert('Code executed successfully! Check the test cases for results.');
+                    runCodeBtn.innerHTML = '<i class="fas fa-play"></i> Run Code';
+                    runCodeBtn.disabled = false;
+                }, 1500);
+            });
+            
+            // Handle submit solution
+            submitCodeBtn.addEventListener('click', () => {
+                const code = document.getElementById('codeArea').value;
+                const language = document.getElementById('languageSelect').value;
+                
+                // Show loading state
+                submitCodeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+                submitCodeBtn.disabled = true;
+                
+                // In a real implementation, this would send the solution to the backend for evaluation
+                // For demo purposes, we'll just show a success message after a delay
+                setTimeout(() => {
+                    alert('Solution submitted successfully! Your results will be available shortly.');
+                    submitCodeBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Solution';
+                    submitCodeBtn.disabled = false;
+                }, 1500);
+            });
+            
+            // Timer countdown (demo)
+            let timeLeft = 30 * 60; // 30 minutes in seconds
+            const timerInterval = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    alert('Time is up! Your solution will be automatically submitted.');
+                }
+                
+                timeLeft--;
+            }, 1000);
+            
+            console.log('Coding Challenge page loaded');
+        });
+    </script>
+</body>
+</html>

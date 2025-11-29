@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - SkillBet Arena</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/cyber-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="cosmic-theme">
+    <!-- Cosmic Background Elements -->
+    <div class="cosmic-background">
+        <div class="nebula"></div>
+        <div class="floating-planet planet-1"></div>
+        <div class="floating-planet planet-2"></div>
+        <div class="floating-planet planet-3"></div>
+        <div class="star-field">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="cosmic-navbar">
+        <div class="cosmic-nav-container">
+            <div class="cosmic-nav-logo">
+                <h2>SkillBet <span>Arena</span></h2>
+            </div>
+            <div class="cosmic-nav-icons">
+                <div class="nav-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="nav-icon" onclick="window.location.href='settings.html'">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="user-profile-cosmic">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic-cosmic">
+                    <div class="user-info">
+                        <span class="username-cosmic">CosmicPlayer</span>
+                        <span class="points">1,250 pts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="cosmic-hero">
+        <div class="cosmic-glow"></div>
+        <div class="container">
+            <div class="page-header">
+                <h1 class="cosmic-title">Player <span>Profile</span></h1>
+                <p class="cosmic-subtitle">Manage your account and preferences</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avatar Card -->
+    <section class="cosmic-games">
+        <div class="container">
+            <div class="avatar-card">
+                <div class="avatar-container">
+                    <img src="../assets/images/default-avatar.png" alt="Profile Picture" class="profile-avatar">
+                    <button class="edit-avatar-btn">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                <h2 class="username-display">CosmicPlayer</h2>
+                <p class="user-email">cosmicplayer@example.com</p>
+                
+                <div class="user-stats-row">
+                    <div class="stat-box">
+                        <span class="stat-value">87</span>
+                        <span class="stat-label">Games Played</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">78%</span>
+                        <span class="stat-label">Win Rate</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">₹2,450</span>
+                        <span class="stat-label">Total Earnings</span>
+                    </div>
+                </div>
+                
+                <div class="subscription-badge">
+                    <span class="badge gold">Gold Pass</span>
+                    <span>Expires: 15 Dec 2023</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Grid -->
+    <section class="cosmic-rewards">
+        <div class="container">
+            <h2 class="section-heading">Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>First Win</h3>
+                    <p>Win your first game</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Streak Master</h3>
+                    <p>Win 5 games in a row</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Champion</h3>
+                    <p>Reach top 10 leaderboard</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Speed Demon</h3>
+                    <p>Complete game in record time</p>
+                </div>
+            </div>
+            
+            <div class="edit-profile-btn-container">
+                <button class="cosmic-btn primary">
+                    <i class="fas fa-edit"></i> Edit Profile
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="cosmic-bottom-nav">
+        <div class="nav-item-cosmic" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='games.html'">
+            <i class="fas fa-gamepad"></i>
+            <span>Games</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='wallet.html'">
+            <i class="fas fa-wallet"></i>
+            <span>Wallet</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='leaderboard.html'">
+            <i class="fas fa-trophy"></i>
+            <span>Leaderboard</span>
+        </div>
+        <div class="nav-item-cosmic active" onclick="window.location.href='profile.html'">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </div>
+    </nav>
+
+    <script src="../assets/js/cyber-dashboard.js"></script>
+</body>
+</html>

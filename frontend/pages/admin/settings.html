@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Settings - SkillBet Arena Admin</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Navigation -->
+    <nav class="admin-nav">
+        <div class="admin-nav-container">
+            <div class="admin-nav-logo">
+                <h2>SkillBet <span>Arena</span> Admin</h2>
+            </div>
+            <ul class="admin-nav-menu">
+                <li class="admin-nav-item">
+                    <a href="dashboard.html" class="admin-nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="contests.html" class="admin-nav-link">
+                        <i class="fas fa-trophy"></i>
+                        <span>Contests</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="users.html" class="admin-nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="transactions.html" class="admin-nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="withdrawals.html" class="admin-nav-link">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Withdrawals</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="settings.html" class="admin-nav-link active">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="admin-nav-footer">
+                <button id="logoutBtn" class="btn btn-outline btn-small">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="admin-header">
+            <h1>Platform Settings</h1>
+            <div class="admin-header-actions">
+                <div class="admin-user">
+                    <img src="../../assets/images/default-avatar.png" alt="Admin" class="admin-avatar">
+                    <span>Admin User</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Sections -->
+        <section class="admin-content">
+            <div class="container">
+                <div class="settings-grid">
+                    <!-- Platform Settings -->
+                    <div class="settings-card">
+                        <h3><i class="fas fa-sliders-h"></i> Platform Settings</h3>
+                        <div class="setting-item">
+                            <label for="commissionRate">Commission Rate (%)</label>
+                            <input type="number" id="commissionRate" value="10" min="0" max="50">
+                        </div>
+                        <div class="setting-item">
+                            <label for="minWithdrawal">Minimum Withdrawal Amount (₹)</label>
+                            <input type="number" id="minWithdrawal" value="100" min="10" max="10000">
+                        </div>
+                        <div class="setting-item">
+                            <label for="maxWithdrawal">Maximum Withdrawal Amount (₹)</label>
+                            <input type="number" id="maxWithdrawal" value="50000" min="100" max="100000">
+                        </div>
+                        <div class="setting-item">
+                            <label for="maintenanceMode">
+                                <input type="checkbox" id="maintenanceMode"> Maintenance Mode
+                            </label>
+                        </div>
+                        <button class="btn btn-primary">Save Platform Settings</button>
+                    </div>
+
+                    <!-- Game Settings -->
+                    <div class="settings-card">
+                        <h3><i class="fas fa-gamepad"></i> Game Settings</h3>
+                        <div class="setting-item">
+                            <label for="codingTimeLimit">Coding Challenge Time Limit (minutes)</label>
+                            <input type="number" id="codingTimeLimit" value="30" min="5" max="120">
+                        </div>
+                        <div class="setting-item">
+                            <label for="mathsQuestions">Maths Quiz Questions</label>
+                            <input type="number" id="mathsQuestions" value="15" min="5" max="50">
+                        </div>
+                        <div class="setting-item">
+                            <label for="memoryMaxLevel">Memory Pattern Max Level</label>
+                            <input type="number" id="memoryMaxLevel" value="20" min="5" max="50">
+                        </div>
+                        <div class="setting-item">
+                            <label for="typingTimeLimit">Typing Speed Time Limit (seconds)</label>
+                            <input type="number" id="typingTimeLimit" value="60" min="30" max="300">
+                        </div>
+                        <button class="btn btn-primary">Save Game Settings</button>
+                    </div>
+
+                    <!-- Subscription Settings -->
+                    <div class="settings-card">
+                        <h3><i class="fas fa-crown"></i> Subscription Settings</h3>
+                        <div class="setting-item">
+                            <label for="goldPassPrice">Gold Pass Price (₹)</label>
+                            <input type="number" id="goldPassPrice" value="49" min="10" max="500">
+                        </div>
+                        <div class="setting-item">
+                            <label for="elitePassPrice">Elite Pass Price (₹)</label>
+                            <input type="number" id="elitePassPrice" value="149" min="50" max="1000">
+                        </div>
+                        <div class="setting-item">
+                            <label for="goldBenefits">Gold Pass Benefits</label>
+                            <textarea id="goldBenefits" rows="3">No ads, Bonus 100 coins, Fast matchmaking</textarea>
+                        </div>
+                        <div class="setting-item">
+                            <label for="eliteBenefits">Elite Pass Benefits</label>
+                            <textarea id="eliteBenefits" rows="3">Premium contests, Extra rewards, Special badge</textarea>
+                        </div>
+                        <button class="btn btn-primary">Save Subscription Settings</button>
+                    </div>
+
+                    <!-- Admin Accounts -->
+                    <div class="settings-card">
+                        <h3><i class="fas fa-user-shield"></i> Admin Accounts</h3>
+                        <div class="setting-item">
+                            <label for="newAdminEmail">Add New Admin</label>
+                            <input type="email" id="newAdminEmail" placeholder="Enter admin email">
+                        </div>
+                        <button class="btn btn-primary">Add Admin</button>
+                        <div class="admin-list">
+                            <h4>Current Admins</h4>
+                            <ul>
+                                <li>admin@skillbetarena.com <button class="btn btn-danger btn-small">Remove</button></li>
+                                <li>moderator@skillbetarena.com <button class="btn btn-danger btn-small">Remove</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoutBtn = document.getElementById('logoutBtn');
+            
+            // Handle logout
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to logout?')) {
+                    // In a real implementation, this would call the backend logout endpoint
+                    window.location.href = '../../index.html';
+                }
+            });
+            
+            // Handle save buttons
+            const saveButtons = document.querySelectorAll('.btn-primary');
+            saveButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // In a real implementation, this would save settings to the backend
+                    alert('Settings saved successfully!');
+                });
+            });
+            
+            console.log('Admin settings page loaded');
+        });
+    </script>
+</body>
+</html>

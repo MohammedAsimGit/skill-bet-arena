@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - SkillBet Arena</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-form-wrapper">
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Join SkillBet Arena today</p>
+            </div>
+            
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Create a password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                        <i class="fas fa-eye toggle-confirm-password"></i>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="referral">Referral Code (Optional)</label>
+                    <div class="input-group">
+                        <i class="fas fa-gift"></i>
+                        <input type="text" id="referral" name="referral" placeholder="Enter referral code">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                </div>
+                
+                <div class="form-footer">
+                    <p>Already have an account? <a href="login.html">Login</a></p>
+                </div>
+            </form>
+            
+            <!-- Confirmation message (hidden by default) -->
+            <div id="confirmationMessage" class="confirmation-message hidden">
+                <div class="confirmation-icon">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h3>Check Your Email</h3>
+                <p>We've sent a confirmation email to <span id="userEmail"></span>. Please check your inbox and click the confirmation link to activate your account.</p>
+                <p>Didn't receive the email? <a href="#" id="resendEmail">Resend Confirmation Email</a></p>
+                <button id="backToLogin" class="btn btn-outline btn-block">Back to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script type="module">
+        import { registerUser, resendConfirmationEmail } from '../assets/js/auth.js';
+        
+        // Check for redirect message from duplicate account error
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Check if user is already logged in
+            try {
+                const { data: { session } } = await supabase.auth.getSession();
+                if (session) {
+                    // User is already logged in, redirect to welcome page
+                    window.location.href = '../welcome.html';
+                    return;
+                }
+            } catch (error) {
+                console.error('Error checking session:', error);
+            }
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const duplicateAccount = urlParams.get('duplicate');
+            
+            if (duplicateAccount === 'true') {
+                alert('This account already exists. Please login instead.');
+            }
+            
+            const signupForm = document.getElementById('signupForm');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            const userEmailSpan = document.getElementById('userEmail');
+            const resendEmailLink = document.getElementById('resendEmail');
+            const backToLoginBtn = document.getElementById('backToLogin');
+            const togglePassword = document.querySelector('.toggle-password');
+            const toggleConfirmPassword = document.querySelector('.toggle-confirm-password');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            
+            // Toggle password visibility
+            togglePassword.addEventListener('click', () => {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                togglePassword.classList.toggle('fa-eye');
+                togglePassword.classList.toggle('fa-eye-slash');
+            });
+            
+            // Toggle confirm password visibility
+            toggleConfirmPassword.addEventListener('click', () => {
+                const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirmPasswordInput.setAttribute('type', type);
+                toggleConfirmPassword.classList.toggle('fa-eye');
+                toggleConfirmPassword.classList.toggle('fa-eye-slash');
+            });
+            
+            // Handle form submission
+            signupForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                const referral = document.getElementById('referral').value;
+                
+                // Validation
+                if (!name || !email || !password || !confirmPassword) {
+                    alert('Please fill in all required fields');
+                    return;
+                }
+                
+                if (!SkillBetArena.validateEmail(email)) {
+                    alert('Please enter a valid email address');
+                    return;
+                }
+                
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match');
+                    return;
+                }
+                
+                if (!SkillBetArena.validatePassword(password)) {
+                    alert('Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number');
+                    return;
+                }
+                
+                // Define submitButton and originalText outside the try block
+                const submitButton = signupForm.querySelector('button[type="submit"]');
+                const originalText = submitButton.textContent;
+                
+                try {
+                    // Show loading state
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+                    submitButton.disabled = true;
+                    
+                    // Prepare user data
+                    const userData = {
+                        email,
+                        password,
+                        displayName: name
+                    };
+                    
+                    // Add referral code if provided
+                    if (referral) {
+                        userData.referredBy = referral;
+                    }
+                    
+                    // Attempt to register
+                    const result = await registerUser(userData);
+                    
+                    // Show confirmation message
+                    signupForm.classList.add('hidden');
+                    confirmationMessage.classList.remove('hidden');
+                    userEmailSpan.textContent = email;
+                } catch (error) {
+                    // Check if it's a duplicate account error
+                    if (error.message.includes('This account already exists')) {
+                        // Redirect to login page with duplicate account message
+                        window.location.href = `login.html?duplicate=true`;
+                    } else {
+                        alert('Registration failed: ' + error.message);
+                    }
+                } finally {
+                    // Reset button state
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                }
+            });
+            
+            // Resend confirmation email
+            resendEmailLink.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                
+                try {
+                    const result = await resendConfirmationEmail(email);
+                    alert(result.message);
+                } catch (error) {
+                    alert(error.message);
+                }
+            });
+            
+            // Back to login
+            backToLoginBtn.addEventListener('click', () => {
+                window.location.href = 'login.html';
+            });
+        });
+    </script>
+</body>
+</html>

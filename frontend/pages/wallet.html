@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - SkillBet Arena</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/cyber-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="cosmic-theme">
+    <!-- Cosmic Background Elements -->
+    <div class="cosmic-background">
+        <div class="nebula"></div>
+        <div class="floating-planet planet-1"></div>
+        <div class="floating-planet planet-2"></div>
+        <div class="floating-planet planet-3"></div>
+        <div class="star-field">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="cosmic-navbar">
+        <div class="cosmic-nav-container">
+            <div class="cosmic-nav-logo">
+                <h2>SkillBet <span>Arena</span></h2>
+            </div>
+            <div class="cosmic-nav-icons">
+                <div class="nav-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="nav-icon" onclick="window.location.href='settings.html'">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="user-profile-cosmic">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic-cosmic">
+                    <div class="user-info">
+                        <span class="username-cosmic">CosmicPlayer</span>
+                        <span class="points">1,250 pts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="cosmic-hero">
+        <div class="cosmic-glow"></div>
+        <div class="container">
+            <div class="page-header">
+                <h1 class="cosmic-title">Wallet <span>System</span></h1>
+                <p class="cosmic-subtitle">Manage your funds and transactions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wallet Balance Card -->
+    <section class="cosmic-games">
+        <div class="container">
+            <div class="wallet-balance-card">
+                <div class="balance-content">
+                    <div class="balance-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="balance-info">
+                        <h3>Available Balance</h3>
+                        <p class="balance-amount">₹2,450.00</p>
+                    </div>
+                </div>
+                <div class="wallet-actions">
+                    <button class="cosmic-btn primary">
+                        <i class="fas fa-plus-circle"></i> Add Coins
+                    </button>
+                    <button class="cosmic-btn secondary">
+                        <i class="fas fa-minus-circle"></i> Withdraw
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transaction History -->
+    <section class="cosmic-rewards">
+        <div class="container">
+            <h2 class="section-heading">Transaction History</h2>
+            <div class="transaction-history-card">
+                <div class="transaction-item">
+                    <div class="transaction-details">
+                        <div class="transaction-icon positive">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="transaction-text">
+                            <h4>Added money to wallet</h4>
+                            <p class="transaction-date">2023-06-15 14:30</p>
+                        </div>
+                        <div class="transaction-amount positive">
+                            +₹500.00
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div class="transaction-details">
+                        <div class="transaction-icon negative">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="transaction-text">
+                            <h4>Joined Coding Challenge</h4>
+                            <p class="transaction-date">2023-06-12 10:15</p>
+                        </div>
+                        <div class="transaction-amount negative">
+                            -₹50.00
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div class="transaction-details">
+                        <div class="transaction-icon positive">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="transaction-text">
+                            <h4>Won Maths Quiz Battle</h4>
+                            <p class="transaction-date">2023-06-10 16:45</p>
+                        </div>
+                        <div class="transaction-amount positive">
+                            +₹150.00
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div class="transaction-details">
+                        <div class="transaction-icon pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="transaction-text">
+                            <h4>Withdrawal request</h4>
+                            <p class="transaction-date">2023-06-08 09:20</p>
+                        </div>
+                        <div class="transaction-amount pending">
+                            -₹200.00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Icon -->
+    <div class="security-icon">
+        <i class="fas fa-shield-alt"></i>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="cosmic-bottom-nav">
+        <div class="nav-item-cosmic" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='games.html'">
+            <i class="fas fa-gamepad"></i>
+            <span>Games</span>
+        </div>
+        <div class="nav-item-cosmic active" onclick="window.location.href='wallet.html'">
+            <i class="fas fa-wallet"></i>
+            <span>Wallet</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='leaderboard.html'">
+            <i class="fas fa-trophy"></i>
+            <span>Leaderboard</span>
+        </div>
+        <div class="nav-item-cosmic" onclick="window.location.href='profile.html'">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </div>
+    </nav>
+
+    <script src="../assets/js/cyber-dashboard.js"></script>
+</body>
+</html>

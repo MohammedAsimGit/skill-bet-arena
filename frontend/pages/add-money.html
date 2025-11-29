@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Money - SkillBet Arena</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>SkillBet <span>Arena</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="games.html" class="nav-link">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="wallet.html" class="nav-link">Wallet</a>
+                </li>
+            </ul>
+            <div class="nav-auth">
+                <button id="logoutBtn" class="btn btn-outline">Logout</button>
+                <div class="user-profile">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic">
+                    <span class="username">User</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Add Money Header -->
+    <section class="wallet-header">
+        <div class="container">
+            <div class="wallet-info">
+                <h1>Add Money to Wallet</h1>
+                <div class="wallet-balance">
+                    <span>Current Balance</span>
+                    <h2 id="currentBalance">₹0.00</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Money Form -->
+    <section class="add-money-form">
+        <div class="container">
+            <div class="form-card">
+                <h2>Select Amount</h2>
+                <div class="amount-options">
+                    <div class="amount-option" data-amount="50">
+                        <span>₹50</span>
+                    </div>
+                    <div class="amount-option" data-amount="100">
+                        <span>₹100</span>
+                    </div>
+                    <div class="amount-option" data-amount="200">
+                        <span>₹200</span>
+                    </div>
+                    <div class="amount-option" data-amount="500">
+                        <span>₹500</span>
+                    </div>
+                    <div class="amount-option" data-amount="1000">
+                        <span>₹1000</span>
+                    </div>
+                    <div class="amount-option" data-amount="2000">
+                        <span>₹2000</span>
+                    </div>
+                </div>
+                
+                <div class="custom-amount">
+                    <label for="customAmount">Or Enter Custom Amount</label>
+                    <input type="number" id="customAmount" min="10" max="10000" placeholder="Enter amount (₹10-₹10000)">
+                </div>
+                
+                <div class="selected-amount">
+                    <h3>Selected Amount: <span id="selectedAmount">₹0</span></h3>
+                </div>
+                
+                <h2>Payment Method</h2>
+                <div class="payment-methods">
+                    <div class="payment-option selected" data-method="razorpay">
+                        <i class="fas fa-bolt"></i>
+                        <span>Razorpay</span>
+                    </div>
+                    <div class="payment-option" data-method="upi">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>UPI</span>
+                    </div>
+                    <div class="payment-option" data-method="card">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Credit/Debit Card</span>
+                    </div>
+                </div>
+                
+                <button id="proceedToPayBtn" class="btn btn-primary btn-block" disabled>
+                    Proceed to Pay
+                </button>
+            </div>
+            
+            <div class="payment-security">
+                <h3>Payment Security</h3>
+                <ul>
+                    <li><i class="fas fa-shield-alt"></i> 256-bit SSL encryption</li>
+                    <li><i class="fas fa-lock"></i> PCI DSS compliant</li>
+                    <li><i class="fas fa-user-shield"></i> 3D Secure authentication</li>
+                    <li><i class="fas fa-sync-alt"></i> Instant money addition</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonus Banner -->
+    <section class="bonus-banner">
+        <div class="container">
+            <div class="bonus-content">
+                <div class="bonus-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="bonus-text">
+                    <h3>Get 10% Extra on First Deposit!</h3>
+                    <p>Use code <strong>FIRST10</strong> to get extra ₹50 bonus on deposits above ₹500</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoutBtn = document.getElementById('logoutBtn');
+            const amountOptions = document.querySelectorAll('.amount-option');
+            const customAmountInput = document.getElementById('customAmount');
+            const selectedAmountDisplay = document.getElementById('selectedAmount');
+            const proceedToPayBtn = document.getElementById('proceedToPayBtn');
+            const paymentOptions = document.querySelectorAll('.payment-option');
+            
+            let selectedAmount = 0;
+            let selectedPaymentMethod = 'razorpay';
+            
+            // Handle logout
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to logout?')) {
+                    SkillBetArena.logoutUser();
+                }
+            });
+            
+            // Handle amount selection
+            amountOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    // Remove selected class from all options
+                    amountOptions.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    option.classList.add('selected');
+                    
+                    // Set selected amount
+                    selectedAmount = parseInt(option.dataset.amount);
+                    selectedAmountDisplay.textContent = `₹${selectedAmount}`;
+                    proceedToPayBtn.disabled = false;
+                });
+            });
+            
+            // Handle custom amount input
+            customAmountInput.addEventListener('input', () => {
+                const value = parseInt(customAmountInput.value);
+                
+                if (value >= 10 && value <= 10000) {
+                    selectedAmount = value;
+                    selectedAmountDisplay.textContent = `₹${selectedAmount}`;
+                    proceedToPayBtn.disabled = false;
+                    
+                    // Remove selection from predefined amounts
+                    amountOptions.forEach(opt => opt.classList.remove('selected'));
+                } else if (customAmountInput.value === '') {
+                    selectedAmount = 0;
+                    selectedAmountDisplay.textContent = '₹0';
+                    proceedToPayBtn.disabled = true;
+                }
+            });
+            
+            // Handle payment method selection
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    // Remove selected class from all options
+                    paymentOptions.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    option.classList.add('selected');
+                    
+                    // Set selected payment method
+                    selectedPaymentMethod = option.dataset.method;
+                });
+            });
+            
+            // Handle proceed to pay
+            proceedToPayBtn.addEventListener('click', async () => {
+                if (selectedAmount <= 0) {
+                    alert('Please select a valid amount');
+                    return;
+                }
+                
+                try {
+                    // Show loading state
+                    proceedToPayBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                    proceedToPayBtn.disabled = true;
+                    
+                    // In a real implementation, this would integrate with Razorpay or other payment gateways
+                    // For demo purposes, we'll just show a success message
+                    setTimeout(() => {
+                        alert(`Payment of ₹${selectedAmount} processed successfully!`);
+                        
+                        // Reset form
+                        amountOptions.forEach(opt => opt.classList.remove('selected'));
+                        customAmountInput.value = '';
+                        selectedAmount = 0;
+                        selectedAmountDisplay.textContent = '₹0';
+                        proceedToPayBtn.disabled = true;
+                        proceedToPayBtn.textContent = 'Proceed to Pay';
+                        
+                        // Update balance display (demo)
+                        document.getElementById('currentBalance').textContent = 
+                            `₹${(parseFloat(document.getElementById('currentBalance').textContent.replace('₹', '')) + selectedAmount).toFixed(2)}`;
+                    }, 1500);
+                } catch (error) {
+                    alert('Failed to process payment: ' + error.message);
+                    proceedToPayBtn.textContent = 'Proceed to Pay';
+                    proceedToPayBtn.disabled = false;
+                }
+            });
+            
+            // Load current balance (in a real app, this would come from API)
+            // For demo purposes, we'll use a mock value
+            document.getElementById('currentBalance').textContent = '₹250.00';
+            
+            console.log('Add Money page loaded');
+        });
+    </script>
+</body>
+</html>

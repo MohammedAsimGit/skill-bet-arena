@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Galaxy Skill Arena</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cyber-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="cosmic-theme">
+    <!-- Cosmic Background Elements -->
+    <div class="cosmic-background">
+        <div class="nebula"></div>
+        <div class="floating-planet planet-1"></div>
+        <div class="floating-planet planet-2"></div>
+        <div class="floating-planet planet-3"></div>
+        <div class="star-field">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+        <!-- Floating geometric shapes -->
+        <div class="floating-shape hexagon"></div>
+        <div class="floating-shape ring"></div>
+        <div class="floating-shape triangle"></div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <nav class="cosmic-navbar">
+        <div class="cosmic-nav-container">
+            <div class="cosmic-nav-logo">
+                <h2>Galaxy <span>Skill Arena</span></h2>
+            </div>
+            <div class="cosmic-nav-menu">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Contact</a>
+                <a href="pages/login.html" class="cosmic-btn secondary" id="authButton">Login / Sign Up</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="cosmic-hero">
+        <div class="cosmic-glow"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="cosmic-title">Welcome to Galaxy <span>Skill Arena</span></h1>
+                    <p class="cosmic-subtitle">Play Smart. Win Fair. Level Up.</p>
+                    <p class="hero-description">Test your skills, challenge the world, and earn rewards through pure skill-based competitions.</p>
+                    <div class="hero-buttons">
+                        <button class="cosmic-btn primary" onclick="window.location.href='pages/signup.html'">Start Playing</button>
+                        <button class="cosmic-btn secondary" onclick="window.location.href='#features'">Learn More</button>
+                    </div>
+                </div>
+                <div class="hero-illustration">
+                    <div class="cosmic-orb">
+                        <div class="orb-core"></div>
+                        <div class="orb-ring"></div>
+                        <div class="orb-particles">
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Feature Cards Section -->
+    <section class="cosmic-features" id="features">
+        <div class="container">
+            <h2 class="section-heading">Why Choose Us</h2>
+            <div class="features-grid">
+                <!-- Fast Skill Battles -->
+                <div class="feature-card glass-card">
+                    <div class="card-icon neon-blue">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>⚡ Fast Skill Battles</h3>
+                    <p>Real-time, lag-free challenges against players worldwide.</p>
+                </div>
+                
+                <!-- Improve Daily -->
+                <div class="feature-card glass-card">
+                    <div class="card-icon neon-pink">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>🧠 Improve Daily</h3>
+                    <p>Boost coding, math, logic, and memory skills with each game.</p>
+                </div>
+                
+                <!-- Daily Bonus Rewards -->
+                <div class="feature-card glass-card">
+                    <div class="card-icon neon-purple">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>🎁 Daily Bonus Rewards</h3>
+                    <p>Streak rewards and free credits for consistent players.</p>
+                </div>
+                
+                <!-- 100% Fair Play -->
+                <div class="feature-card glass-card">
+                    <div class="card-icon neon-cyan">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>🔒 100% Fair Play</h3>
+                    <p>Anti-cheat systems and transparent scoring ensure fair competition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us Section -->
+    <section class="cosmic-why">
+        <div class="container">
+            <h2 class="section-heading">Why Gamers Love Us</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <i class="fas fa-trophy neon-icon"></i>
+                    <h3>Only Skill, Never Gambling</h3>
+                    <p>Compete based on your abilities, not chance.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-clock neon-icon"></i>
+                    <h3>Instant Results</h3>
+                    <p>Get immediate feedback and rewards after each match.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-graduation-cap neon-icon"></i>
+                    <h3>Student-Friendly</h3>
+                    <p>Designed for learners with educational value in every game.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-lock neon-icon"></i>
+                    <h3>Secure Database</h3>
+                    <p>Your data is protected with enterprise-grade security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="cosmic-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                </div>
+                <p>&copy; 2025 Galaxy Skill Arena. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Check if user is logged in and update auth button
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Check if user is logged in
+                const { data: { session } } = await supabase.auth.getSession();
+                const authButton = document.getElementById('authButton');
+                
+                if (session) {
+                    // User is logged in, change button to dashboard
+                    authButton.textContent = 'Dashboard';
+                    authButton.onclick = function() {
+                        window.location.href = 'index.html';
+                    };
+                } else {
+                    // User is not logged in, keep login/signup button
+                    authButton.textContent = 'Login / Sign Up';
+                    authButton.onclick = function() {
+                        window.location.href = 'pages/login.html';
+                    };
+                }
+            } catch (error) {
+                console.error('Error checking session:', error);
+            }
+            
+            console.log('Galaxy Skill Arena Welcome Page Loaded');
+        });
+    </script>
+</body>
+</html>

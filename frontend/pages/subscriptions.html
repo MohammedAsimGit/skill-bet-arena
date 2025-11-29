@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscriptions - SkillBet Arena</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>SkillBet <span>Arena</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="games.html" class="nav-link">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="wallet.html" class="nav-link">Wallet</a>
+                </li>
+            </ul>
+            <div class="nav-auth">
+                <button id="logoutBtn" class="btn btn-outline">Logout</button>
+                <div class="user-profile hidden">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic">
+                    <span class="username">User</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <button id="loginBtn" class="btn btn-outline">Login</button>
+                <button id="signupBtn" class="btn btn-primary">Sign Up</button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Subscriptions Header -->
+    <section class="subscriptions-header">
+        <div class="container">
+            <h1>Unlock Premium Features</h1>
+            <p>Enhance your gaming experience with our subscription passes</p>
+        </div>
+    </section>
+
+    <!-- Subscription Plans -->
+    <section class="subscription-plans">
+        <div class="container">
+            <div class="plans-grid">
+                <!-- Gold Pass -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h2>Gold Pass</h2>
+                        <div class="plan-price">
+                            <span class="price">₹49</span>
+                            <span class="duration">/month</span>
+                        </div>
+                        <p class="plan-description">Perfect for casual players who want extra benefits</p>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> No ads</li>
+                            <li><i class="fas fa-check"></i> Bonus 100 coins</li>
+                            <li><i class="fas fa-check"></i> Fast matchmaking</li>
+                            <li><i class="fas fa-times"></i> Premium contests</li>
+                            <li><i class="fas fa-times"></i> Extra rewards</li>
+                            <li><i class="fas fa-times"></i> Special badge</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary btn-block purchase-btn" data-plan="gold">
+                        Get Gold Pass
+                    </button>
+                </div>
+
+                <!-- Elite Pass -->
+                <div class="plan-card featured">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h2>Elite Pass</h2>
+                        <div class="plan-price">
+                            <span class="price">₹149</span>
+                            <span class="duration">/month</span>
+                        </div>
+                        <p class="plan-description">Ultimate experience for serious competitors</p>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Premium contests</li>
+                            <li><i class="fas fa-check"></i> Extra rewards</li>
+                            <li><i class="fas fa-check"></i> Special badge</li>
+                            <li><i class="fas fa-check"></i> No ads</li>
+                            <li><i class="fas fa-check"></i> Fast matchmaking</li>
+                            <li><i class="fas fa-check"></i> Priority customer support</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary btn-block purchase-btn" data-plan="elite">
+                        Get Elite Pass
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Subscription Status -->
+    <section class="current-subscription">
+        <div class="container">
+            <h2>Your Subscription Status</h2>
+            <div class="subscription-status">
+                <div class="status-card">
+                    <div class="status-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="status-info">
+                        <h3>No Active Subscription</h3>
+                        <p>Subscribe to unlock premium features</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is the difference between Gold Pass and Elite Pass?</h3>
+                    <p>Gold Pass offers basic premium features like ad-free experience and bonus coins. Elite Pass includes all Gold Pass features plus exclusive contests, extra rewards, and a special badge.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I cancel my subscription anytime?</h3>
+                    <p>Yes, you can cancel your subscription at any time. However, no refunds will be provided for unused portions of your subscription period.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do subscription coins expire?</h3>
+                    <p>No, coins received through subscriptions never expire. However, they cannot be withdrawn from your wallet.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I upgrade from Gold Pass to Elite Pass?</h3>
+                    <p>Yes, you can upgrade at any time. The remaining time from your current subscription will be applied to the new plan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase Modal -->
+    <div id="purchaseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirm Purchase</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="plan-summary">
+                    <h4 id="modalPlanName">Gold Pass</h4>
+                    <p id="modalPlanPrice">₹49/month</p>
+                </div>
+                <div class="payment-methods">
+                    <h4>Payment Method</h4>
+                    <div class="payment-option selected">
+                        <i class="fas fa-bolt"></i>
+                        <span>Razorpay</span>
+                    </div>
+                </div>
+                <div class="terms-agreement">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="termsCheckbox" required>
+                        <span>I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Subscription Policy</a></span>
+                    </label>
+                </div>
+                <button id="confirmPurchaseBtn" class="btn btn-primary btn-block" disabled>Proceed to Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoutBtn = document.getElementById('logoutBtn');
+            const purchaseButtons = document.querySelectorAll('.purchase-btn');
+            const purchaseModal = document.getElementById('purchaseModal');
+            const closeButtons = document.querySelectorAll('.close');
+            const termsCheckbox = document.getElementById('termsCheckbox');
+            const confirmPurchaseBtn = document.getElementById('confirmPurchaseBtn');
+            
+            // Handle logout
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to logout?')) {
+                    SkillBetArena.logoutUser();
+                }
+            });
+            
+            // Handle purchase button clicks
+            purchaseButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const plan = button.dataset.plan;
+                    openPurchaseModal(plan);
+                });
+            });
+            
+            // Handle terms checkbox
+            termsCheckbox.addEventListener('change', () => {
+                confirmPurchaseBtn.disabled = !termsCheckbox.checked;
+            });
+            
+            // Handle confirm purchase button
+            confirmPurchaseBtn.addEventListener('click', async () => {
+                const plan = confirmPurchaseBtn.dataset.plan;
+                await purchaseSubscription(plan);
+            });
+            
+            // Handle close modal
+            closeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    purchaseModal.style.display = 'none';
+                });
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', (event) => {
+                if (event.target === purchaseModal) {
+                    purchaseModal.style.display = 'none';
+                }
+            });
+            
+            console.log('Subscriptions page loaded');
+        });
+        
+        function openPurchaseModal(plan) {
+            const modalPlanName = document.getElementById('modalPlanName');
+            const modalPlanPrice = document.getElementById('modalPlanPrice');
+            const confirmPurchaseBtn = document.getElementById('confirmPurchaseBtn');
+            
+            if (plan === 'gold') {
+                modalPlanName.textContent = 'Gold Pass';
+                modalPlanPrice.textContent = '₹49/month';
+            } else {
+                modalPlanName.textContent = 'Elite Pass';
+                modalPlanPrice.textContent = '₹149/month';
+            }
+            
+            confirmPurchaseBtn.dataset.plan = plan;
+            document.getElementById('termsCheckbox').checked = false;
+            confirmPurchaseBtn.disabled = true;
+            document.getElementById('purchaseModal').style.display = 'block';
+        }
+        
+        async function purchaseSubscription(plan) {
+            try {
+                // Show loading state
+                const confirmPurchaseBtn = document.getElementById('confirmPurchaseBtn');
+                const originalText = confirmPurchaseBtn.textContent;
+                confirmPurchaseBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                confirmPurchaseBtn.disabled = true;
+                
+                // In a real implementation, this would call the backend API
+                // For demo purposes, we'll just show a success message
+                setTimeout(() => {
+                    alert(`Successfully purchased ${plan === 'gold' ? 'Gold Pass' : 'Elite Pass'}!`);
+                    document.getElementById('purchaseModal').style.display = 'none';
+                    confirmPurchaseBtn.textContent = originalText;
+                    confirmPurchaseBtn.disabled = false;
+                }, 1500);
+            } catch (error) {
+                alert('Failed to purchase subscription: ' + error.message);
+                const confirmPurchaseBtn = document.getElementById('confirmPurchaseBtn');
+                confirmPurchaseBtn.textContent = 'Proceed to Payment';
+                confirmPurchaseBtn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
