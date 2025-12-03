@@ -1,6 +1,46 @@
 // Cyber Dashboard Interactivity
+import { supabase } from './supabase.js';
+import { getCurrentUser } from './auth.js';
+import { getUserProfile } from './database.js';
+
+// Function to update user profile data in the navbar
+async function updateNavbarProfile() {
+  try {
+    // Get current authenticated user
+    const user = await getCurrentUser();
+    
+    if (!user) {
+      return;
+    }
+    
+    // Fetch user profile data
+    const userProfile = await getUserProfile(user.id);
+    
+    // Update navbar profile elements
+    const topNavUsername = document.getElementById('topNavUsername');
+    const topNavPoints = document.getElementById('topNavPoints');
+    const topNavAvatar = document.getElementById('topNavAvatar');
+    
+    if (topNavUsername) {
+      topNavUsername.textContent = userProfile.display_name || 'Player';
+    }
+    
+    if (topNavPoints) {
+      topNavPoints.textContent = `${Math.floor(userProfile.wallet_balance || 0)} pts`;
+    }
+    
+    if (topNavAvatar && userProfile.photo_url) {
+      topNavAvatar.src = userProfile.photo_url;
+    }
+  } catch (error) {
+    console.error('Error updating navbar profile:', error);
+  }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Update navbar profile data
+    updateNavbarProfile();
+    
     // Add hover effects to game cards
     const gameCards = document.querySelectorAll('.cyber-game-card');
     gameCards.forEach(card => {

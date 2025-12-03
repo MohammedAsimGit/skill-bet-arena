@@ -39,10 +39,10 @@
                     <i class="fas fa-cog"></i>
                 </div>
                 <div class="user-profile-cosmic">
-                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic-cosmic">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic-cosmic" id="topNavAvatar">
                     <div class="user-info">
-                        <span class="username-cosmic">CosmicPlayer</span>
-                        <span class="points">1,250 pts</span>
+                        <span class="username-cosmic" id="topNavUsername">Loading...</span>
+                        <span class="points" id="topNavPoints">0 pts</span>
                     </div>
                 </div>
             </div>
@@ -65,32 +65,32 @@
         <div class="container">
             <div class="avatar-card">
                 <div class="avatar-container">
-                    <img src="../assets/images/default-avatar.png" alt="Profile Picture" class="profile-avatar">
+                    <img src="../assets/images/default-avatar.png" alt="Profile Picture" class="profile-avatar" id="profileAvatar">
                     <button class="edit-avatar-btn">
                         <i class="fas fa-camera"></i>
                     </button>
                 </div>
-                <h2 class="username-display">CosmicPlayer</h2>
-                <p class="user-email">cosmicplayer@example.com</p>
+                <h2 class="username-display" id="profileUsername">Loading...</h2>
+                <p class="user-email" id="profileEmail">Loading...</p>
                 
                 <div class="user-stats-row">
                     <div class="stat-box">
-                        <span class="stat-value">87</span>
+                        <span class="stat-value" id="gamesPlayed">0</span>
                         <span class="stat-label">Games Played</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-value">78%</span>
+                        <span class="stat-value" id="winRate">0%</span>
                         <span class="stat-label">Win Rate</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-value">₹2,450</span>
+                        <span class="stat-value" id="totalEarnings">₹0</span>
                         <span class="stat-label">Total Earnings</span>
                     </div>
                 </div>
                 
-                <div class="subscription-badge">
-                    <span class="badge gold">Gold Pass</span>
-                    <span>Expires: 15 Dec 2023</span>
+                <div class="subscription-badge" id="subscriptionInfo">
+                    <span class="badge free">Loading...</span>
+                    <span id="subscriptionExpiry">Expires: N/A</span>
                 </div>
             </div>
         </div>
@@ -166,6 +166,7 @@
         </div>
     </nav>
 
-    <script src="../assets/js/cyber-dashboard.js"></script>
+    <script type="module" src="../assets/js/profile.js"></script>
+    <script type="module" src="../assets/js/cyber-dashboard.js"></script>
 </body>
 </html>
