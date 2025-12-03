@@ -39,10 +39,10 @@
                     <i class="fas fa-cog"></i>
                 </div>
                 <div class="user-profile-cosmic">
-                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic-cosmic">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic-cosmic" id="topNavAvatar">
                     <div class="user-info">
-                        <span class="username-cosmic">CosmicPlayer</span>
-                        <span class="points">1,250 pts</span>
+                        <span class="username-cosmic" id="topNavUsername">Loading...</span>
+                        <span class="points" id="topNavPoints">0 pts</span>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="balance-info">
                         <h3>Available Balance</h3>
-                        <p class="balance-amount">₹2,450.00</p>
+                        <p class="balance-amount" id="walletBalance">₹0.00</p>
                     </div>
                 </div>
                 <div class="wallet-actions">
@@ -89,66 +89,9 @@
     <section class="cosmic-rewards">
         <div class="container">
             <h2 class="section-heading">Transaction History</h2>
-            <div class="transaction-history-card">
-                <div class="transaction-item">
-                    <div class="transaction-details">
-                        <div class="transaction-icon positive">
-                            <i class="fas fa-arrow-down"></i>
-                        </div>
-                        <div class="transaction-text">
-                            <h4>Added money to wallet</h4>
-                            <p class="transaction-date">2023-06-15 14:30</p>
-                        </div>
-                        <div class="transaction-amount positive">
-                            +₹500.00
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="transaction-item">
-                    <div class="transaction-details">
-                        <div class="transaction-icon negative">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
-                        <div class="transaction-text">
-                            <h4>Joined Coding Challenge</h4>
-                            <p class="transaction-date">2023-06-12 10:15</p>
-                        </div>
-                        <div class="transaction-amount negative">
-                            -₹50.00
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="transaction-item">
-                    <div class="transaction-details">
-                        <div class="transaction-icon positive">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="transaction-text">
-                            <h4>Won Maths Quiz Battle</h4>
-                            <p class="transaction-date">2023-06-10 16:45</p>
-                        </div>
-                        <div class="transaction-amount positive">
-                            +₹150.00
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="transaction-item">
-                    <div class="transaction-details">
-                        <div class="transaction-icon pending">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="transaction-text">
-                            <h4>Withdrawal request</h4>
-                            <p class="transaction-date">2023-06-08 09:20</p>
-                        </div>
-                        <div class="transaction-amount pending">
-                            -₹200.00
-                        </div>
-                    </div>
-                </div>
+            <div class="transaction-history-card" id="transactionHistory">
+                <!-- Transactions will be loaded here dynamically -->
+                <div class="loading-transactions">Loading transactions...</div>
             </div>
         </div>
     </section>
@@ -182,6 +125,7 @@
         </div>
     </nav>
 
+    <script type="module" src="../assets/js/wallet.js"></script>
     <script src="../assets/js/cyber-dashboard.js"></script>
 </body>
 </html>

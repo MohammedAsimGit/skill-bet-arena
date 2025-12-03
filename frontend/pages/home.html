@@ -39,10 +39,10 @@
                     <i class="fas fa-cog"></i>
                 </div>
                 <div class="user-profile-cosmic">
-                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic-cosmic">
+                    <img src="../assets/images/default-avatar.png" alt="User" class="profile-pic-cosmic" id="topNavAvatar">
                     <div class="user-info">
-                        <span class="username-cosmic">CosmicPlayer</span>
-                        <span class="points">1,250 pts</span>
+                        <span class="username-cosmic" id="topNavUsername">Loading...</span>
+                        <span class="points" id="topNavPoints">0 pts</span>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
     <section class="welcome-banner">
         <div class="container">
             <div class="banner-content">
-                <h2 class="welcome-title">Welcome Back, <span class="username-highlight">CosmicPlayer</span></h2>
+                <h2 class="welcome-title">Welcome Back, <span class="username-highlight" id="welcomeUsername">Loading...</span></h2>
                 <p class="welcome-subtitle">Ready to conquer new challenges today?</p>
             </div>
         </div>
@@ -81,15 +81,15 @@
                     <div class="hero-stats">
                         <div class="stat-item">
                             <i class="fas fa-coins"></i>
-                            <span>₹2,450</span>
+                            <span id="heroWalletBalance">₹0</span>
                         </div>
                         <div class="stat-item">
                             <i class="fas fa-trophy"></i>
-                            <span>42 Wins</span>
+                            <span id="heroGamesWon">0 Wins</span>
                         </div>
                         <div class="stat-item">
                             <i class="fas fa-chart-line"></i>
-                            <span>78% Win Rate</span>
+                            <span id="heroWinRate">0% Win Rate</span>
                         </div>
                     </div>
                     <button class="cosmic-btn primary" onclick="window.location.href='games.html'">Play Now</button>
@@ -149,36 +149,36 @@
                 <div class="leaderboard-card">
                     <div class="rank-badge">1</div>
                     <div class="player-avatar-cyber">
-                        <img src="../assets/images/default-avatar.png" alt="Player">
+                        <img src="../assets/images/default-avatar.png" alt="Player" id="leaderboardFirstAvatar">
                         <div class="trophy-gold"><i class="fas fa-trophy"></i></div>
                     </div>
                     <div class="player-info-cyber">
-                        <h4>QuizKing99</h4>
-                        <p>15,750 pts</p>
+                        <h4 id="leaderboardFirstName">Loading...</h4>
+                        <p id="leaderboardFirstPoints">0 pts</p>
                     </div>
                 </div>
                 
                 <div class="leaderboard-card">
                     <div class="rank-badge">2</div>
                     <div class="player-avatar-cyber">
-                        <img src="../assets/images/default-avatar.png" alt="Player">
+                        <img src="../assets/images/default-avatar.png" alt="Player" id="leaderboardSecondAvatar">
                         <div class="trophy-silver"><i class="fas fa-trophy"></i></div>
                     </div>
                     <div class="player-info-cyber">
-                        <h4>CodeMaster23</h4>
-                        <p>12,450 pts</p>
+                        <h4 id="leaderboardSecondName">Loading...</h4>
+                        <p id="leaderboardSecondPoints">0 pts</p>
                     </div>
                 </div>
                 
                 <div class="leaderboard-card">
                     <div class="rank-badge">3</div>
                     <div class="player-avatar-cyber">
-                        <img src="../assets/images/default-avatar.png" alt="Player">
+                        <img src="../assets/images/default-avatar.png" alt="Player" id="leaderboardThirdAvatar">
                         <div class="trophy-bronze"><i class="fas fa-trophy"></i></div>
                     </div>
                     <div class="player-info-cyber">
-                        <h4>TypingPro</h4>
-                        <p>9,800 pts</p>
+                        <h4 id="leaderboardThirdName">Loading...</h4>
+                        <p id="leaderboardThirdPoints">0 pts</p>
                     </div>
                 </div>
             </div>
@@ -228,6 +228,7 @@
         </div>
     </nav>
 
+    <script type="module" src="../assets/js/home.js"></script>
     <script type="module">
         import { supabase } from '../assets/js/supabase.js';
         import { logoutUser } from '../assets/js/auth.js';
