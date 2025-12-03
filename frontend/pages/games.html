@@ -77,7 +77,7 @@
                     </div>
                     <h3>Coding Challenge</h3>
                     <p>Test your programming skills with real-world problems and algorithms.</p>
-                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                    <button class="cosmic-btn secondary" onclick="window.location.href='coding-challenge.html'">PLAY NOW</button>
                 </div>
 
                 <!-- Maths Quiz -->
@@ -87,7 +87,7 @@
                     </div>
                     <h3>Maths Quiz Battle</h3>
                     <p>Compete in fast-paced mathematical challenges across various topics.</p>
-                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                    <button class="cosmic-btn secondary" onclick="startMathQuiz()">PLAY NOW</button>
                 </div>
 
                 <!-- Memory Pattern -->
@@ -97,7 +97,7 @@
                     </div>
                     <h3>Memory Pattern</h3>
                     <p>Train and test your memory with increasingly complex patterns.</p>
-                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                    <button class="cosmic-btn secondary" onclick="startMemoryGame()">PLAY NOW</button>
                 </div>
 
                 <!-- Typing Speed -->
@@ -107,7 +107,7 @@
                     </div>
                     <h3>Typing Speed</h3>
                     <p>Improve your typing speed and accuracy in competitive environments.</p>
-                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                    <button class="cosmic-btn secondary" onclick="startTypingTest()">PLAY NOW</button>
                 </div>
                 
                 <!-- Logic Puzzle -->
@@ -117,7 +117,7 @@
                     </div>
                     <h3>Logic Puzzle</h3>
                     <p>Solve intricate puzzles with logical reasoning.</p>
-                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                    <button class="cosmic-btn secondary" onclick="showComingSoon()">PLAY NOW</button>
                 </div>
                 
                 <!-- Speed Reaction -->
@@ -127,7 +127,7 @@
                     </div>
                     <h3>Speed Reaction</h3>
                     <p>React faster than your opponents in real-time challenges.</p>
-                    <button class="cosmic-btn secondary">PLAY NOW</button>
+                    <button class="cosmic-btn secondary" onclick="showComingSoon()">PLAY NOW</button>
                 </div>
             </div>
         </div>
@@ -164,5 +164,23 @@
 
     <script type="module" src="../assets/js/games.js"></script>
     <script src="../assets/js/cyber-dashboard.js"></script>
+    <script>
+        // Functions to handle game starts
+        function startMathQuiz() {
+            alert("Math Quiz game is coming soon!");
+        }
+        
+        function startMemoryGame() {
+            alert("Memory Pattern game is coming soon!");
+        }
+        
+        function startTypingTest() {
+            alert("Typing Speed test is coming soon!");
+        }
+        
+        function showComingSoon() {
+            alert("This game is coming soon!");
+        }
+    </script>
 </body>
 </html>
