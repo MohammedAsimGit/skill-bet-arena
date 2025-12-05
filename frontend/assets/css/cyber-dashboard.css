@@ -8,6 +8,7 @@
     --darker-color: #050510;
     --light-color: #ffffff;
     --text-light: #f0f0f0;
+    --text-dark: #333333;
     --electric-blue: #00eeff;
     --purple-neon: #bd00ff;
     --cyan-accent: #00ffff;
@@ -17,16 +18,54 @@
     --neon-glow-purple: 0 0 10px #bd00ff, 0 0 20px #bd00ff, 0 0 30px #bd00ff;
 }
 
+/* Light theme variables */
+:root.light-theme {
+    --primary-color: #4a00e0;
+    --secondary-color: #8e2de2;
+    --accent-color: #00c9ff;
+    --dark-color: #f5f5f5;
+    --darker-color: #e0e0e0;
+    --light-color: #333333;
+    --text-light: #333333;
+    --text-dark: #f0f0f0;
+    --electric-blue: #0066cc;
+    --purple-neon: #8e2de2;
+    --cyan-accent: #0088cc;
+    --pink-gradient: #ff0066;
+    --neon-glow: 0 0 5px #0066cc, 0 0 10px #0066cc;
+    --neon-glow-purple: 0 0 5px #8e2de2, 0 0 10px #8e2de2;
+}
+
 /* Cosmic Theme Variables */
-.cosmic-theme {
-    --cosmic-purple: #4a00e0;
-    --cosmic-indigo: #8e2de2;
-    --cosmic-magenta: #ff00cc;
-    --cosmic-pink: #ff00cc;
-    --cosmic-blue: #00eeff;
-    --cosmic-glow-pink: 0 0 15px #ff00cc, 0 0 25px #ff00cc;
-    --cosmic-glow-blue: 0 0 15px #00eeff, 0 0 25px #00eeff;
-    --cosmic-gradient: linear-gradient(135deg, var(--cosmic-purple), var(--cosmic-indigo), var(--cosmic-magenta));
+.cosmic-theme.light-theme {
+    --cosmic-purple: #8e2de2;
+    --cosmic-indigo: #4a00e0;
+    --cosmic-magenta: #ff0066;
+    --cosmic-pink: #ff0066;
+    --cosmic-blue: #0066cc;
+    --cosmic-glow-pink: 0 0 5px #ff0066, 0 0 10px #ff0066;
+    --cosmic-glow-blue: 0 0 5px #0066cc, 0 0 10px #0066cc;
+}
+
+/* Theme toggle button styles */
+#themeToggle {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#themeToggle:hover {
+    transform: scale(1.1);
+}
+
+/* Light theme body */
+body.light-theme {
+    background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+    color: var(--text-light);
+}
+
+.cosmic-theme.light-theme body {
+    background: linear-gradient(135deg, #e0e0ff, #f0f0ff, #ffffff);
+    background-attachment: fixed;
 }
 
 body {
@@ -102,6 +141,347 @@ body {
     width: 50px;
     height: 50px;
     top: 40%;
+    left: 50%;
+    animation: float 12s infinite ease-in-out;
+    animation-delay: 4s;
+}
+
+/* Keyframes for floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Dashboard Card Styles */
+.card {
+    background: var(--dark-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-header {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    font-size: 1em;
+}
+
+/* Dashboard Button Styles */
+.button {
+    background: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: var(--secondary-color);
+}
+
+/* Dashboard Input Styles */
+.input {
+    background: var(--darker-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Dashboard Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--darker-color);
+}
+
+.table th {
+    background: var(--dark-color);
+    color: var(--text-light);
+}
+
+.table tr:hover {
+    background: var(--darker-color);
+}
+
+/* Dashboard Progress Bar Styles */
+.progress-bar {
+    width: 100%;
+    background: var(--darker-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 20px;
+    background: var(--accent-color);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+/* Dashboard Chart Styles */
+.chart {
+    width: 100%;
+    height: 300px;
+    background: var(--darker-color);
+    border-radius: var(--border-radius);
+}
+
+/* Dashboard Notification Styles */
+.notification {
+    background: var(--accent-color);
+    color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Dashboard Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--dark-color);
+    color: var(--text-light);
+    text-align: center;
+    border-radius: var(--border-radius);
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--dark-color) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Dashboard Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--dark-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--darker-color);
+    width: 80%;
+    max-width: 600px;
+    border-radius: var(--border-radius);
+}
+
+.close {
+    color: var(--light-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--secondary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Dashboard Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--dark-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--text-light);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--darker-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: var(--secondary-color);
+}
+
+/* Dashboard Pagination Styles */
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: var(--text-light);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid var(--darker-color);
+    margin: 0 4px;
+}
+
+.pagination a.active {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: 1px solid var(--primary-color);
+}
+
+.pagination a:hover:not(.active) {
+    background-color: var(--secondary-color);
+}
+
+/* Dashboard Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--darker-color);
+    border-radius: var(--border-radius);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group button {
+    background: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-group button:hover {
+    background: var(--secondary-color);
+}
+
+/* Dashboard Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: var(--dark-color);
+    color: var(--text-light);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: var(--secondary-color);
+}
+
+/* Dashboard Footer Styles */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--dark-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 10px 0;
+}
+
+.planet-3 {
     left: 85%;
     animation: float 25s infinite ease-in-out;
     animation-delay: 4s;
